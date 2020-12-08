@@ -1,4 +1,4 @@
-with open("day6.txt", "r") as file:
+with open("day06.txt", "r") as file:
     answers = file.read().split("\n\n")
 
 # Part 1

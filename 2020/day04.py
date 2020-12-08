@@ -1,4 +1,4 @@
-with open("day4.txt") as file:
+with open("day04.txt") as file:
     lines = file.read().splitlines()
 
 passports = []

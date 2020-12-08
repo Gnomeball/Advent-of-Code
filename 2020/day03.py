@@ -1,6 +1,6 @@
 from functools import *
 
-with open("day3.txt") as file:
+with open("day03.txt") as file:
     grid = file.read().splitlines()
 
 # Part 1
