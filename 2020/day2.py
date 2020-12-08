@@ -1,5 +1,4 @@
-from parse import *
-from functools import *
+from parse import parse
 
 with open("day2.txt") as file:
     passwords = file.read().splitlines()
