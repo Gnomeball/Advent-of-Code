@@ -12,5 +12,3 @@ values = sorted([(8*int(p[:7].replace("F","0").replace("B","1"),2))+int(p[7:].re
 seat = [x for x in range(len(passes)) if x not in values and x > values[0]]
 
 print(seat)
-
-# print(max([x for x in range(len(passes)) if x not in sorted([(8*int(p[:7].replace("F","0").replace("B","1"),2))+int(p[7:].replace("L","0").replace("R","1"),2) for p in passes])]))

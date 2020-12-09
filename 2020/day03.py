@@ -1,4 +1,4 @@
-from functools import *
+from functools import reduce
 
 with open("day03.txt") as file:
     grid = file.read().splitlines()
