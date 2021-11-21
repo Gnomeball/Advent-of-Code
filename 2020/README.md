@@ -1,5 +1,5 @@
 ### 2020
 
-Lots of these solutions are uninteligable Python one liners.
+Lots of these solutions are unintelligible Python one-liners.
 
-This is because for this year mine, and many others at Swansea University, self imposed the challenge of one lining as many of these problems as possible.. and we produced some truly awful code as a result, enjoy!
+This is because for this year I, and many others at Swansea University, self-imposed the challenge of one lining as many of these problems as possible.  As a result we produced some truly awful code, enjoy!

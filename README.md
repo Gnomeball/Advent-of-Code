@@ -1,3 +1,3 @@
-### Advent of Code 2020
+### Advent of Code
 
-This will likely be updated when I fine my solutions from last year
+Contains my solutions to the annual [Advent of Code](https://adventofcode.com) event.

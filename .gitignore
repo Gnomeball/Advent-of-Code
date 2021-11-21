@@ -1,5 +1,2 @@
-*/__pycache__/*
-.pytest_cache/*
-*-abandoned.py
-.vscode/*
-temp.py
+*.txt
+*.pytest_cache/
