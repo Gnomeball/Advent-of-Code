@@ -17,7 +17,7 @@ def say_what_you_see(input)
 end
 
 
-input = instructions = File.readlines("day10.txt", chomp: true)[0]
+input = File.readlines("day10.txt", chomp: true)[0]
 
 for i in 1..50
     input = say_what_you_see(input)
