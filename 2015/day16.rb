@@ -1,16 +1,16 @@
 input = File.readlines("day16.txt", chomp: true)
 
 data = {
-    "cats" => 7,
-    "trees" => 3,
+    "cats"        => 7,
+    "trees"       => 3,
     "pomeranians" => 3,
-    "goldfish" => 5,
-    "children" => 3,
-    "samoyeds" => 2,
-    "akitas" => 0,
-    "vizslas" => 0,
-    "cars" => 2,
-    "perfumes" => 1
+    "goldfish"    => 5,
+    "children"    => 3,
+    "samoyeds"    => 2,
+    "akitas"      => 0,
+    "vizslas"     => 0,
+    "cars"        => 2,
+    "perfumes"    => 1
 }
 
 sues = {}
