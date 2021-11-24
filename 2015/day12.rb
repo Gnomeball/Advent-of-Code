@@ -16,6 +16,7 @@ end
 print numbers.reduce(0, :+), "\n"
 
 # Who even needs json?
+# (This only works because my editor formetted the JSON first)
 
 # Part 2 - oshit..
 
