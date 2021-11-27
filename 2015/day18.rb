@@ -1,4 +1,4 @@
-input = File.readlines("day18.txt", chomp: true)#.map { |i| i.split("") }
+input = File.readlines("day18.txt", chomp: true)
 
 def print_grid(input)
     print "Grid:\n\n"
@@ -12,39 +12,21 @@ def print_grid(input)
 end
 
 def count_grid(input)
-    score = 0
-    for r in 0...input.length
-        for c in 0...input[0].size
-            if input[c][r] == "#"
-                score += 1
-            end
-        end
-    end
+    score = input.flatten.map { |c| c == "#" ? 1 : 0 }.sum
     return score
 end
 
 def get_neighbours(c, r, min, max)
-    neighbours = []
-    for x in c-1..c+1
-        for y in r-1..r+1
-            if x < min || x > max || y < min || y > max || (x == c && y == r)
-                next
-            end
-            neighbours.push([x, y])
-        end
-    end
-    return neighbours
+    all_neighbours = [*c-1..c+1].product([*r-1..r+1]).select { |x, y| [x, y] }
+    valid_neighbours = all_neighbours.delete_if {
+        |x, y| x < min || x > max || y < min || y > max || (x == c && y == r) }
+    return valid_neighbours
 end
 
 def count_on(input, c, r)
-    count_on = 0
     neighbours = get_neighbours(c, r, 0, input.size-1)
-    for n in neighbours
-        if input[n[0]][n[1]] == "#"
-            count_on += 1
-        end
-    end
-    return count_on
+    count = neighbours.map { |n| input[n[0]][n[1]] == "#" ? 1 : 0 }.sum
+    return count
 end
 
 def tick(input)
@@ -55,19 +37,11 @@ def tick(input)
             if input[c][r] == "#"
                 # * A light which is on stays on when 2 or 3 neighbors are on, and turns off otherwise.
                 count = count_on(input, c, r)
-                if count == 2 || count == 3
-                    output[c][r] = "#"
-                else
-                    output[c][r] = "."
-                end
+                output[c][r] = count == 3 || count == 2 ? "#" : "."
             elsif input[c][r] == "."
                 # * A light which is off turns on if exactly 3 neighbors are on, and stays off otherwise.
                 count = count_on(input, c, r)
-                if count == 3
-                    output[c][r] = "#"
-                else
-                    output[c][r] = "."
-                end
+                output[c][r] = count == 3 ? "#" : "."
             end
         end
     end
@@ -91,7 +65,6 @@ print_grid(input)
 
 100.times do
     input = tick(input)
-    # print_grid(input)
 end
 
 print_grid(input)
