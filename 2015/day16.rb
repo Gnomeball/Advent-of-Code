@@ -13,65 +13,30 @@ data = {
     "perfumes"    => 1
 }
 
+@nuclear_decay = {"cats" => true, "trees" => true}
+@modial_interaction = {"pomeranians" => true, "goldfish" => true}
+
 sues = {}
 
 input.each do |i|
-    details = i.split(" ")
-    name = (details[1].delete! ":").to_i
-    var_1 = (details[2].delete! ":")
-    val_1 = (details[3].delete! ",").to_i
-    var_2 = (details[4].delete! ":")
-    val_2 = (details[5].delete! ",").to_i
-    var_3 = (details[6].delete! ":")
-    val_3 = (details[7]).to_i
-    sue = {
-        var_1 => val_1,
-        var_2 => val_2,
-        var_3 => val_3
-    }
-    sues.store(name, sue)
+    details = i.delete(":,").split(" ")
+    sues.store(details[1].to_i, {
+        details[2] => details[3].to_i,
+        details[4] => details[5].to_i,
+        details[6] => details[7].to_i
+    })
 end
 
 def score_sue(sue, data)
-    score = 0
-
-    if sue.key? "cats"
-        if sue.fetch("cats") > data.fetch("cats")
-            score += 1
+    return sue.keys.map { |k|
+        if @nuclear_decay.key? k
+            sue.fetch(k) > data.fetch(k)
+        elsif @modial_interaction.key? k
+            sue.fetch(k) < data.fetch(k)
+        elsif sue.fetch(k) == data.fetch(k)
+            true
         end
-        sue.delete("cats")
-    end
-
-    if sue.key? "trees"
-        if sue.fetch("trees") > data.fetch("trees")
-            score += 1
-        end
-        sue.delete("trees")
-    end
-
-    if sue.key? "pomeranians"
-        if sue.fetch("pomeranians") < data.fetch("pomeranians")
-            score += 1
-        end
-        sue.delete("pomeranians")
-    end
-
-    if sue.key? "goldfish"
-        if sue.fetch("goldfish") < data.fetch("goldfish")
-            score += 1
-        end
-        sue.delete("goldfish")
-    end
-
-    data.keys.each do |k|
-        if sue.key? k
-            if sue.fetch(k) == data.fetch(k)
-                score += 1
-            end
-        end
-    end
-
-    return score
+    }.count(true)
 end
 
 the_sue = [*1..500].max_by { |sue| score_sue(sues.fetch(sue), data) }
