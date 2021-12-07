@@ -7,8 +7,8 @@ My personal challenge this year is to write my solutions as functionally as poss
 3. Wordy, very wordy
 4. Proper types as early as day 4, what is this?!
 5. Had to convince myself I wasn't going mad with the maths
-6.
-7.
+6. Brainwave required
+7. Almost too easy, is this bait?
 8.
 9.
 10.
