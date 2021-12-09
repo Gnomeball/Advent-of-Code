@@ -9,8 +9,8 @@ My personal challenge this year is to write my solutions as functionally as poss
 5. Had to convince myself I wasn't going mad with the maths
 6. Brainwave required
 7. Almost too easy, is this bait?
-8.
-9.
+8. A fun logic puzzle
+9. In order to understand recursion ..
 10.
 11.
 12.
