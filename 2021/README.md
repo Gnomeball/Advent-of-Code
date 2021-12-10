@@ -11,7 +11,7 @@ My personal challenge this year is to write my solutions as functionally as poss
 7. Almost too easy, is this bait?
 8. A fun logic puzzle
 9. In order to understand recursion ..
-10.
+10. Reads as more confusing than it is
 11.
 12.
 13.
