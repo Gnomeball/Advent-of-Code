@@ -51,7 +51,7 @@ class Display
         @mapping.store("middle", four)
         @mapping.store("top_left", four)
 
-        # * whatever is in all of 3, 4, 5 is top, middle, bottom
+        # * whatever is in all of 2, 3, 5 is top, middle, bottom
         two = input[3]
         three = input[4]
         five = input[5]

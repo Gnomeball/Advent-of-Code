@@ -1,25 +1,8 @@
 input = File.readlines("day10.txt", chomp: true).map { |l| l.split("") }
 
-$corrupt_scores = {
-    ")" => 3,
-    "]" => 57,
-    "}" => 1197,
-    ">" => 25137
-}
-
-$incomplete_score = {
-    ")" => 1,
-    "]" => 2,
-    "}" => 3,
-    ">" => 4
-}
-
-$chars = {
-    "(" => ")",
-    "[" => "]",
-    "{" => "}",
-    "<" => ">"
-}
+$corrupt_scores = { ")" => 3, "]" => 57, "}" => 1197, ">" => 25137 }
+$incomplete_score = { ")" => 1, "]" => 2, "}" => 3, ">" => 4 }
+$chars = { "(" => ")", "[" => "]", "{" => "}", "<" => ">" }
 
 def score_corrupted(line)
     stack = []
@@ -54,11 +37,7 @@ def score_incomplete(line)
         if "([{<".include?(c) then
             stack.push(c)
         else # * it's a closing
-            if $chars.fetch(stack.last) == c then
-                stack.pop
-            else
-                return "PANIC on " + line
-            end
+            stack.pop
         end
     end
     score = 0

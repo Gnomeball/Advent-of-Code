@@ -12,9 +12,9 @@ My personal challenge this year is to write my solutions as functionally as poss
 8. A fun logic puzzle
 9. In order to understand recursion ..
 10. Reads as more confusing than it is
-11.
-12.
-13.
+11. Kinda fun
+12. < Skipped this one >
+13. Not too bad, though feels like complexity is a little up and down this year
 14.
 15. < Furthest I've gotten in actuality >
 16.
