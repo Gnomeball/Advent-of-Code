@@ -17,8 +17,8 @@ My personal challenge this year is to write my solutions as functionally as poss
 13. Not too bad, though feels like complexity is a little up and down this year
 14. This took longer than it ought to
 15. Who even needs Dijsktra?
-16.
-17.
+16. This took far too long, but was very fun
+17. Had a wave brain, turned out to be a good one
 18.
 19.
 20. < Furthest I've gotten in practice >

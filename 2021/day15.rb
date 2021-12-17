@@ -23,12 +23,12 @@ def flatten(part, grid)
     # pad
 
     for l in grid
-        l.unshift(1000)
-        l.push(1000)
+        l.unshift(10000)
+        l.push(10000)
     end
 
-    grid.unshift(Array.new(grid[0].length) { 1000 } )
-    grid.push(Array.new(grid[0].length) { 1000 } )
+    grid.unshift(Array.new(grid[0].length) { 10000 } )
+    grid.push(Array.new(grid[0].length) { 10000 } )
 
     # end pad
 
@@ -46,9 +46,8 @@ end
 full_grid = Array.new(input.length * 5) { Array.new(input.length * 5) { 0 } }
 for y in 0...full_grid.length
     for x in 0...full_grid.length
-        full_grid[y][x] = (
+        full_grid[y][x] =
             input[y % input.length][x % input.length] + (y/input.length) + (x/input.length)
-            )
         if full_grid[y][x] > 9 then full_grid[y][x] -= 9 end
     end
 end
