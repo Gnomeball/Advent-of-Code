@@ -19,7 +19,7 @@ My personal challenge this year is to write my solutions as functionally as poss
 15. Who even needs Dijsktra?
 16. This took far too long, but was very fun
 17. Had a wave brain, turned out to be a good one
-18.
+18. Who needs trees? Not me!
 19.
 20. < Furthest I've gotten in practice >
 21.
