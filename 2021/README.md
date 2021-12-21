@@ -21,7 +21,7 @@ My personal challenge this year is to write my solutions as functionally as poss
 17. Had a wave brain, turned out to be a good one
 18. Who needs trees? Not me!
 19. Unseasonably difficult .. code doesn't quite work, but I got the answer
-20. < Furthest I've gotten in practice >
+20. BodgeBodgeBodge!
 21.
 22.
 23.
