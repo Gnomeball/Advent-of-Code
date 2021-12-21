@@ -146,7 +146,7 @@ end
 #     end
 # end
 
-print("locations = #{$scanner_locations}\n")
+# print("locations = #{$scanner_locations}\n")
 print("part one = #{$beacon_locations.length}\n")
 
 distances = $scanner_locations.permutation(2).map { |a,b| manhattan(a, b) }

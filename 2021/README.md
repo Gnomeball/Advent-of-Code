@@ -22,7 +22,7 @@ My personal challenge this year is to write my solutions as functionally as poss
 18. Who needs trees? Not me!
 19. Unseasonably difficult .. code doesn't quite work, but I got the answer
 20. BodgeBodgeBodge!
-21.
+21. Needed a hint .. first time for everything
 22.
 23.
 24.
