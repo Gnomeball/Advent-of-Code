@@ -20,10 +20,10 @@ My personal challenge this year is to write my solutions as functionally as poss
 16. This took far too long, but was very fun
 17. Had a wave brain, turned out to be a good one
 18. Who needs trees? Not me!
-19. Unseasonably difficult .. code doesn't quite work, but I got the answer
+19. Unseasonably difficult .. code is very slow
 20. BodgeBodgeBodge!
 21. Needed a hint .. first time for everything
-22.
+22. Strangeness ensues
 23.
 24.
 25. < My aim this year! >
