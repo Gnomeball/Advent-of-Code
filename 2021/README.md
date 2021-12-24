@@ -24,6 +24,6 @@ My personal challenge this year is to write my solutions as functionally as poss
 20. BodgeBodgeBodge!
 21. Needed a hint .. first time for everything
 22. Strangeness ensues
-23.
-24.
+23. Solved manually, fun game
+24. Solved manually, pattern matching
 25. < My aim this year! >

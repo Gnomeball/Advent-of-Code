@@ -2,23 +2,14 @@ def parse_snail(string)
     depth = 0
     out = []
     string.chars.each do |char|
-        if char.match?(/\d/) then
-            out << [char.to_i, depth]
-        elsif char == "[" then
-            depth += 1
-        elsif char == "]" then
-            depth -= 1
+        case char
+        when "["; depth += 1
+        when "]"; depth -= 1
+        else
+            out << [char.to_i, depth] if char.match?(/\d/)
         end
     end
     return out
-end
-
-def can_explode(snail)
-    for i in 0...snail.length
-        magnitude = snail[i][1]
-        return true if magnitude >= 5
-    end
-    return false
 end
 
 def explode_snail(snail)
@@ -27,26 +18,18 @@ def explode_snail(snail)
         magnitude = snail[i][1]
         if magnitude >= 5 then
             l_num, r_num = i, i+1
+            if l_num != nil then
+                snail[l_num-1][0] += snail[l_num][0] if l_num != 0
+                snail[l_num] = [0, snail[l_num][1]-1]
+            end
+            if r_num != nil then
+                snail[r_num+1][0] += snail[r_num][0] if r_num != snail.length-1
+                snail[r_num] = 0
+            end
             break
         end
     end
-    if l_num != nil then
-        snail[l_num-1][0] += snail[l_num][0] if l_num != 0
-        snail[l_num] = [0, snail[l_num][1]-1]
-    end
-    if r_num != nil then
-        snail[r_num+1][0] += snail[r_num][0] if r_num != snail.length-1
-        snail[r_num] = 0
-    end
     return snail.delete_if { |x| x == 0 }
-end
-
-def can_split(snail)
-    for i in 0...snail.length
-        n = snail[i][0]
-        return true if n > 9
-    end
-    return false
 end
 
 def split_snail(snail)
@@ -64,25 +47,17 @@ def split_snail(snail)
 end
 
 def add_snails(a, b)
-
     snail = []
-    for obj in a
-        snail.push(obj.dup)
+    a.each { |o| snail.push(o.dup) }
+    b.each { |o| snail.push(o.dup) }
+    snail.each { |n| n[1] += 1 }
+    loop do
+        explode = (0...snail.length).map { |m| snail[m][1] >= 5 }.reduce(&:|)
+        if explode then snail = explode_snail(snail); next end
+        split = (0...snail.length).map { |m| snail[m][0] > 9 }.reduce(&:|)
+        break if !(explode || split)
+        if split then snail = split_snail(snail); next end
     end
-    for obj in b
-        snail.push(obj.dup)
-    end
-
-    for n in snail
-        n[1] += 1
-    end
-
-    while can_explode(snail) || can_split(snail) do
-        # print("split : #{can_split(snail)}    explode : #{can_explode(snail)}\n")
-        if can_explode(snail) then snail = explode_snail(snail); next end
-        if can_split(snail) then snail = split_snail(snail); next end
-    end
-
     return snail
 end
 
