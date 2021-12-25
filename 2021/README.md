@@ -26,4 +26,6 @@ My personal challenge this year is to write my solutions as functionally as poss
 22. Strangeness ensues
 23. Solved manually, fun game
 24. Solved manually, pattern matching
-25. < My aim this year! >
+25. Donedid
+
+First time completing the entire calendar (:
