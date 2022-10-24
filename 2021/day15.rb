@@ -1,4 +1,4 @@
-input = File.readlines("day15.txt", chomp: true).map { |l| l.split("").map(&:to_i) }
+input = File.readlines("data/day15.txt", chomp: true).map { |l| l.split("").map(&:to_i) }
 
 def flatten(part, grid)
     grid[0][0] = 0

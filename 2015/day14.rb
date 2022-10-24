@@ -32,7 +32,7 @@ class Reindeer
 
 end
 
-input = File.readlines("day14.txt", chomp: true)
+input = File.readlines("data/day14.txt", chomp: true)
 
 reindeers = []
 

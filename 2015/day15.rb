@@ -53,7 +53,7 @@ def score(ingredients, selection)
 
 end
 
-input = File.readlines("day15.txt", chomp: true)
+input = File.readlines("data/day15.txt", chomp: true)
 
 ingredients = []
 input.each { |i| ingredients.push(Ingredient.new(i)) }

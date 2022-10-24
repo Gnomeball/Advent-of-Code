@@ -1,4 +1,4 @@
-input = File.readlines("day13.txt", chomp: true)
+input = File.readlines("data/day13.txt", chomp: true)
 
 split = input.index("")
 

@@ -1,4 +1,4 @@
-with open("day09.txt", "r") as file:
+with open("data/day09.txt", "r") as file:
     numbers = [int(n) for n in file.read().splitlines()]
 
 # def pairSum(number, numbers):

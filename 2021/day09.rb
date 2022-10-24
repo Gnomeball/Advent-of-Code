@@ -1,4 +1,4 @@
-input = File.readlines("day09.txt", chomp: true).map { |l| l.split("").map(&:to_i) }
+input = File.readlines("data/day09.txt", chomp: true).map { |l| l.split("").map(&:to_i) }
 
 for l in input
     l.unshift(9)

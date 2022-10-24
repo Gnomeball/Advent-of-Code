@@ -1,5 +1,5 @@
-# input = File.readlines("day13.txt", chomp: true)[0..55].map { |x| x.split(" ") }
-input = File.readlines("day13.txt", chomp: true).map { |x| x.split(" ") }
+# input = File.readlines("data/day13.txt", chomp: true)[0..55].map { |x| x.split(" ") }
+input = File.readlines("data/day13.txt", chomp: true).map { |x| x.split(" ") }
 # Swap these for each part
 
 def calculate_happyness(pair, pairs)

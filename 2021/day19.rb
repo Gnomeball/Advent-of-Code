@@ -1,4 +1,4 @@
-input = File.read("day19.txt", chomp: true).split("\n\n").map { |s| s.split("\n") }
+input = File.read("data/day19.txt", chomp: true).split("\n\n").map { |s| s.split("\n") }
 $scanners = (0...input.length).map { |s| input[s][1..].map { |o| o.split(",").map(&:to_i) } }
 
 def orientations_of(pos)

@@ -1,4 +1,4 @@
-input = File.readlines("day05.txt", chomp: true).map { |i|
+input = File.readlines("data/day05.txt", chomp: true).map { |i|
     i.split(" -> ").map { |e| e.split(",").map { |i| i.to_i } }.flatten }
 
 grid = Array.new(1000) { Array.new(1000) { 0 } }

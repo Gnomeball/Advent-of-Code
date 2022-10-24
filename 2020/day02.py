@@ -1,6 +1,6 @@
 from parse import parse
 
-with open("day02.txt") as file:
+with open("data/day02.txt") as file:
     passwords = file.read().splitlines()
 
 # Part 1

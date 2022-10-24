@@ -73,7 +73,7 @@ def calculate_magnitude(snail)
     return snail.first.first
 end
 
-input = File.readlines("day18.txt", chomp: true).map { |l| parse_snail(l) }
+input = File.readlines("data/day18.txt", chomp: true).map { |l| parse_snail(l) }
 
 snail = input[0]
 

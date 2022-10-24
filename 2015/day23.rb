@@ -1,4 +1,4 @@
-instructions = File.readlines("day23.txt", chomp: true)
+instructions = File.readlines("data/day23.txt", chomp: true)
 
 n_instructions = instructions.size
 current_instruction = 0

@@ -1,4 +1,4 @@
-with open("day04.txt") as file:
+with open("data/day04.txt") as file:
     passports = [l.replace("\n", " ") for l in file.read().split("\n\n")]
 
 

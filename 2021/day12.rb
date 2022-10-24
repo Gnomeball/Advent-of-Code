@@ -1,4 +1,4 @@
-# input = File.readlines("day12.txt", chomp: true).map { |l| l.split("-") }
+# input = File.readlines("data/day12.txt", chomp: true).map { |l| l.split("-") }
 
 # print input, "\n"
 

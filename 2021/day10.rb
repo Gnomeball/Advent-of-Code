@@ -1,4 +1,4 @@
-input = File.readlines("day10.txt", chomp: true).map { |l| l.split("") }
+input = File.readlines("data/day10.txt", chomp: true).map { |l| l.split("") }
 
 $corrupt_scores = { ")" => 3, "]" => 57, "}" => 1197, ">" => 25137 }
 $incomplete_score = { ")" => 1, "]" => 2, "}" => 3, ">" => 4 }

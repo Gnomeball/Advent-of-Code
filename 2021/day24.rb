@@ -1,4 +1,4 @@
-input = File.readlines("day24.txt", chomp: true).map(&:split)
+input = File.readlines("data/day24.txt", chomp: true).map(&:split)
 
 n_s = Array.new(18) { [] }
 for ins in input

@@ -1,4 +1,4 @@
-input = File.readlines("day17.txt", chomp: true).map { |x| x.to_i }
+input = File.readlines("data/day17.txt", chomp: true).map { |x| x.to_i }
 
 combinations = []
 [*1..10].each { |i| input.combination(i).each { |c| combinations.push(c) } }

@@ -48,7 +48,7 @@ end
 
 
 
-strings = File.readlines("day08.txt", chomp: true)
+strings = File.readlines("data/day08.txt", chomp: true)
 
 part_one(strings)
 part_two(strings)

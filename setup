@@ -1,0 +1,33 @@
+#!/bin/bash
+
+mkdir -p $1/data
+
+touch $1/data/day01.txt
+touch $1/data/day02.txt
+touch $1/data/day03.txt
+touch $1/data/day04.txt
+touch $1/data/day05.txt
+
+touch $1/data/day06.txt
+touch $1/data/day07.txt
+touch $1/data/day08.txt
+touch $1/data/day09.txt
+touch $1/data/day10.txt
+
+touch $1/data/day11.txt
+touch $1/data/day12.txt
+touch $1/data/day13.txt
+touch $1/data/day14.txt
+touch $1/data/day15.txt
+
+touch $1/data/day16.txt
+touch $1/data/day17.txt
+touch $1/data/day18.txt
+touch $1/data/day19.txt
+touch $1/data/day20.txt
+
+touch $1/data/day21.txt
+touch $1/data/day22.txt
+touch $1/data/day23.txt
+touch $1/data/day24.txt
+touch $1/data/day25.txt

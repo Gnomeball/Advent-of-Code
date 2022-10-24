@@ -1,4 +1,4 @@
-with open("day01.txt", "r") as file:
+with open("data/day01.txt", "r") as file:
     ints = [int(i) for i in file.read().splitlines()]
 
 # Part 1

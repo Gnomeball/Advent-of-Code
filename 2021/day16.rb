@@ -19,7 +19,7 @@
 # operator, v=31
 # input = "A0016C880162017C3686B18A3D4780"
 
-input = File.readlines("day16.txt", chomp: true)[0]
+input = File.readlines("data/day16.txt", chomp: true)[0]
 
 hex2bin = {
     "0" => "0000", "1" => "0001", "2" => "0010", "3" => "0011",

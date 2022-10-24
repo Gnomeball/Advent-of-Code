@@ -1,4 +1,4 @@
-with open("day08.txt", "r") as file:
+with open("data/day08.txt", "r") as file:
     instructions = [(i[:3],int(i[4:])) for i in file.read().splitlines()]
 
 def run_instructions(instructions):

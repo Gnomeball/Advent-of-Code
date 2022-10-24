@@ -15,7 +15,7 @@ def part_two(sums: [str]) -> int:
         total += extra + wrap
     return total
 
-with open("day02.txt", "r") as file:
+with open("data/day02.txt", "r") as file:
     sums = file.read().splitlines()
     print(part_one(sums))
     print(part_two(sums))

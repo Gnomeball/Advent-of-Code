@@ -1,4 +1,4 @@
-input = File.readlines("day02.txt", chomp: true).map { |e| e.split(" ") }
+input = File.readlines("data/day02.txt", chomp: true).map { |e| e.split(" ") }
 
 # part 1
 

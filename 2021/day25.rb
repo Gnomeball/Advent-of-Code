@@ -1,4 +1,4 @@
-input = File.readlines("day25.txt", chomp: true).map { |l| l.split("") }
+input = File.readlines("data/day25.txt", chomp: true).map { |l| l.split("") }
 
 def print_grid(grid)
     for y in 0...grid.length

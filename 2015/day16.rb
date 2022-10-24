@@ -1,4 +1,4 @@
-input = File.readlines("day16.txt", chomp: true)
+input = File.readlines("data/day16.txt", chomp: true)
 
 data = {
     "cats"        => 7,

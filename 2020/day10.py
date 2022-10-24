@@ -1,4 +1,4 @@
-with open("day10.txt", "r") as file:
+with open("data/day10.txt", "r") as file:
     adapters = sorted([int(a) for a in file.read().splitlines()])
 
 # Part 1 -- This is not clean nor is it good

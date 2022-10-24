@@ -1,4 +1,4 @@
-input = File.read("day06.txt").split(",").map { |i| i.to_i }
+input = File.read("data/day06.txt").split(",").map { |i| i.to_i }
 
 fish = (0..8).map { |i| input.count(i) }
 

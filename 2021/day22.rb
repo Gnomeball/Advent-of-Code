@@ -1,6 +1,6 @@
 require 'set'
 
-input = File.readlines("day22.txt", chomp: true)
+input = File.readlines("data/day22.txt", chomp: true)
 
 def combine(new_cube, cubes)
 

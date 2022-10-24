@@ -1,4 +1,4 @@
-input = File.read("day07.txt").split(",").map { |i| i.to_i }
+input = File.read("data/day07.txt").split(",").map { |i| i.to_i }
 
 min = input.min
 max = input.max

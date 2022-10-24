@@ -1,4 +1,4 @@
-input = File.readlines("day20.txt", chomp: true)
+input = File.readlines("data/day20.txt", chomp: true)
 
 mapping = input[0]
 

@@ -1,4 +1,4 @@
-with open("day12.txt", "r") as file:
+with open("data/day12.txt", "r") as file:
     directions = [(d[0], int(d[1:])) for d in file.read().splitlines()]
 
 headings_d = ["N", "E", "S", "W"]

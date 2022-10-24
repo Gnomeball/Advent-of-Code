@@ -1,4 +1,4 @@
-input = File.readlines("day09.txt", chomp: true)
+input = File.readlines("data/day09.txt", chomp: true)
 
 def calculate_distance(route, routes)
     distance = 0

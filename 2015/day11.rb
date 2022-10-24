@@ -1,4 +1,4 @@
-input = File.read("day11.txt", chomp: true)
+input = File.read("data/day11.txt", chomp: true)
 
 def part_one(input)
 

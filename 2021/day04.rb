@@ -1,4 +1,4 @@
-input = File.readlines("day04.txt", chomp: true)
+input = File.readlines("data/day04.txt", chomp: true)
 
 numbers = input[0].split(",").map { |e| e.to_i }
 

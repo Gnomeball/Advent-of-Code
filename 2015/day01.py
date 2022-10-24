@@ -15,7 +15,7 @@ def part_two(string: str) -> int:
         if floor == -1:
             return pos;
 
-with open("day01.txt", "r") as file:
+with open("data/day01.txt", "r") as file:
     brackets = file.read()
     print(part_one(brackets))
     print(part_two(brackets))

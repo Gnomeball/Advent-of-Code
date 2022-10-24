@@ -1,4 +1,4 @@
-instructions = File.readlines("day07.txt")
+instructions = File.readlines("data/day07.txt")
 
 gates = {}
 

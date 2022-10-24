@@ -1,4 +1,4 @@
-with open("day11.txt", "r") as file:
+with open("data/day11.txt", "r") as file:
     seats = [[seat for seat in row] for row in file.read().splitlines()]
 
 HEIGHT = len(seats)

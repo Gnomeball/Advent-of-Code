@@ -1,4 +1,4 @@
-input = File.readlines("day08.txt", chomp: true).map { |l| l.split("|") }
+input = File.readlines("data/day08.txt", chomp: true).map { |l| l.split("|") }
 
 class Display
 

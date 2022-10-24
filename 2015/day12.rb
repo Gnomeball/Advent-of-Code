@@ -1,4 +1,4 @@
-input = File.readlines("day12.json", chomp: true)
+input = File.readlines("data/day12.json", chomp: true)
 
 numbers = []
 

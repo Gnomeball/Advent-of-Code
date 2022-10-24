@@ -1,4 +1,4 @@
-input = File.readlines("day03.txt", chomp: true)
+input = File.readlines("data/day03.txt", chomp: true)
 
 gamma   = Array.new(input[0].length) {0}
 epsilon = Array.new(input[0].length) {0}

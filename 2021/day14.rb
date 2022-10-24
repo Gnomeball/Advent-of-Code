@@ -1,4 +1,4 @@
-input = File.readlines("day14.txt", chomp: true)
+input = File.readlines("data/day14.txt", chomp: true)
 
 polymer = input[0]
 rules_a = input[2..].map { |l| l.split(" -> ") }

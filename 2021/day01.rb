@@ -1,4 +1,4 @@
-input = File.readlines("day01.txt", chomp: true).map { |e| e.to_i }
+input = File.readlines("data/day01.txt", chomp: true).map { |e| e.to_i }
 
 # Part 1
 

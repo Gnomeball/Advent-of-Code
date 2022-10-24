@@ -1,4 +1,4 @@
-input = File.readlines("day18.txt", chomp: true)
+input = File.readlines("data/day18.txt", chomp: true)
 
 def print_grid(input)
     print "Grid:\n\n"

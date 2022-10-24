@@ -74,7 +74,7 @@ def part_two(instructions)
     return total
 end
 
-instructions = File.readlines("day06.txt")
+instructions = File.readlines("data/day06.txt")
 
 puts part_one(instructions)
 puts part_two(instructions)

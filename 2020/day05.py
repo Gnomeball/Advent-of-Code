@@ -1,4 +1,4 @@
-with open("day05.txt", "r") as file:
+with open("data/day05.txt", "r") as file:
     passes = file.read().splitlines()
 
 # Part 1
