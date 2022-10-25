@@ -1,4 +1,10 @@
+# Problem inputs
 *.txt
 *.json
+
+# Compiled stuff
+*/bin
+
+# Misc
 *.pytest_cache/
 misc/
