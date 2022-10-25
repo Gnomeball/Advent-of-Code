@@ -1,7 +1,9 @@
+use std::path::Path;
 use std::fs;
 
 fn main() {
-    let data = fs::read_to_string("data/day01.txt").unwrap();
+    let path = Path::new("data/day01.txt");
+    let data = fs::read_to_string(path).unwrap();
 
     println!("part one: {}", part_one(&data.as_bytes()));
     println!("part two: {}", part_two(&data.as_bytes()));
@@ -11,14 +13,10 @@ fn part_one(data: &[u8]) -> u32 {
     let mut count: u32 = 0;
 
     for i in 0..data.len()-1 {
-        if data[i] == data[i+1] {
-            count += (data[i] as u32) - 48;
-        }
+        if data[i] == data[i+1] { count += (data[i] as u32) - 48 };
     }
-
-    if data[0] == data[data.len()-1] {
-        count += (data[0] as u32) - 48;
-    }
+    
+    if data[0] == data[data.len()-1] { count += (data[0] as u32) - 48 };
 
     return count;
 }
@@ -29,18 +27,14 @@ fn part_two(data: &[u8]) -> u32 {
     for i in 0..data.len() {
         let mut other_index = i + data.len() / 2;
         if other_index >= data.len() { other_index -= data.len() };
-        let other = data[other_index];
-
-        if data[i] == other {
-            count += (data[i] as u32) - 48;
-        }
+        if data[i] == data[other_index] { count += (data[i] as u32) - 48 };
     }
 
     return count;
 }
 
 #[test]
-fn test_part_one() {
+fn test_day01_part_one() {
 
     let tests = [
         ("1122", 3),
@@ -57,7 +51,7 @@ fn test_part_one() {
 }
 
 #[test]
-fn test_part_two() {
+fn test_day01_part_two() {
 
     let tests = [
         ("1212", 6),
