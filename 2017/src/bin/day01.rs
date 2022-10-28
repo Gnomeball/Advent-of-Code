@@ -1,36 +1,41 @@
 use std::path::Path;
 use std::fs;
 
+use std::collections::VecDeque;
+
 fn main() {
     let path = Path::new("data/day01.txt");
     let data = fs::read_to_string(path).unwrap();
+    let nums = build_vector(data);
 
-    println!("part one: {}", part_one(&data.as_bytes()));
-    println!("part two: {}", part_two(&data.as_bytes()));
+    println!("part one: {}", part_one(&nums));
+    println!("part two: {}", part_two(&nums));
 }
 
-fn part_one(data: &[u8]) -> u32 {
-    let mut count: u32 = 0;
+fn build_vector(s: String) -> Vec<u32> {
+    return s.bytes().map(|b| b as u32 - 48).collect();
+}
 
-    for i in 0..data.len()-1 {
-        if data[i] == data[i+1] { count += (data[i] as u32) - 48 };
-    }
-    
-    if data[0] == data[data.len()-1] { count += (data[0] as u32) - 48 };
-
+fn sum_pairs(left: &Vec<u32>, right: VecDeque<u32>) -> u32 {
+    let pairs = left.iter().zip(right.iter());
+    let mut count = 0;
+    for (a, b) in pairs {
+        if a == b { count += a } };
     return count;
 }
 
-fn part_two(data: &[u8]) -> u32 {
-    let mut count: u32 = 0;
+fn part_one(data: &Vec<u32>) -> u32 {
+    let mut data_step: VecDeque<u32> = VecDeque::from(data.clone());
+    data_step.push_front(data[data.len()-1]);
 
-    for i in 0..data.len() {
-        let mut other_index = i + data.len() / 2;
-        if other_index >= data.len() { other_index -= data.len() };
-        if data[i] == data[other_index] { count += (data[i] as u32) - 48 };
-    }
+    return sum_pairs(data, data_step);
+}
 
-    return count;
+fn part_two(data: &Vec<u32>) -> u32 {
+    let mut data_step: VecDeque<u32> = VecDeque::from(data.clone());
+    for i in 0..data.len() / 2 { data_step.push_front(data[data.len()-i-1]) };
+
+    return sum_pairs(data, data_step);
 }
 
 #[test]
@@ -44,7 +49,7 @@ fn test_day01_part_one() {
     ];
 
     for (data, expect) in tests {
-        let result = part_one(&data.as_bytes());
+        let result = part_one(&build_vector(String::from(data)));
         assert_eq!(result, expect);
     }
 
@@ -63,7 +68,7 @@ fn test_day01_part_two() {
 
     for (data, expect) in tests {
         println!("Testing {} {}", data, expect);
-        let result = part_two(&data.as_bytes());
+        let result = part_two(&build_vector(String::from(data)));
         assert_eq!(result, expect);
     }
 
