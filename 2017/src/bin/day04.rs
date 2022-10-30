@@ -6,12 +6,8 @@ fn main() {
     let path = Path::new("data/day04.txt");
     let lines = get_lines(path);
 
-    let split = split_lines(lines);
-    for line in split {
-        for token in line {
-            println!("{}", token);
-        }
-    }
+    println!("Part one = {}", part_one(&lines));
+    println!("Part two = {}", part_two(&lines));
 }
 
 fn get_lines<P>(path: P) -> Vec<String> where P: AsRef<Path> {
@@ -35,18 +31,51 @@ fn get_lines<P>(path: P) -> Vec<String> where P: AsRef<Path> {
     return lines;
 }
 
-fn split_line(line: &String) -> Vec<str> {
-    return line.split_ascii_whitespace().collect();
-}
-
-fn split_lines(lines: Vec<String>) -> Vec<Vec<str>>  {
-    let mut split_ls = Vec::new();
-    for line in lines {
-        split_ls.push(split_line(&line));
+fn line_has_dupes(line: &String) -> bool {
+    let mut split: Vec<&str> = line.split_ascii_whitespace().collect();
+    for _ in 0..split.len() {
+        let item = split.pop().unwrap();
+        if split.contains(&item) { return false };
     }
-    return split_ls;
+    return true;
 }
 
-// fn line_has_dupes() {
+fn part_one(lines: &Vec<String>) -> u32 {
+    let mut count = 0;
+    for line in lines {
+        if line_has_dupes(&line) {
+            count += 1;
+        }
+    }
+    return count;
+}
 
-// }
+fn line_has_dupes_by_anagram(line: &String) -> bool {
+    let mut split: Vec<&str> = line.split_ascii_whitespace().collect();
+    let mut split_o: Vec<String> = Vec::new();
+
+    // This feels a bit cheap, I dun lyke it ..
+    for _ in 0..split.len() {
+        let item = split.pop().unwrap();
+        let mut chars: Vec<char> = item.chars().collect();
+        chars.sort_by(|a, b| b.cmp(a));
+        split_o.push(chars.iter().collect());
+    }
+
+    for _ in 0..split_o.len() {
+        let item = split_o.pop().unwrap();
+        if split_o.contains(&item) { return false };
+    }
+
+    return true;
+}
+
+fn part_two(lines: &Vec<String>) -> u32 {
+    let mut count = 0;
+    for line in lines {
+        if line_has_dupes_by_anagram(&line) {
+            count += 1;
+        }
+    }
+    return count;
+}

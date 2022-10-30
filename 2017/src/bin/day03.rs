@@ -1,5 +1,4 @@
 fn main() {
-
     let number = 368078;
 
     println!("Part one = {}", part_one(number as f32));
@@ -9,22 +8,18 @@ fn main() {
 fn part_one(number: f32) -> u32 {
     let mut step = number.sqrt().floor();
     while step % 2.0 != 0.0 { step += 1.0 };
-
     let width = step + 1.0;
 
-    let bounds: Vec<f32> = [0.0, 1.0, 2.0, 3.0].iter().map(|n| (width * width) - (*n * step)).collect();
-    // println!("{} {} {} {} {}", step, bounds[0], bounds[1], bounds[2], bounds[3]);
+    let bounds: Vec<f32> = [0.0, 1.0, 2.0, 3.0].iter().map(
+        |n| (width * width) - (n * step)).collect();
+    let distances: Vec<u32> = bounds.iter().map(
+        |b| (b - number).abs() as u32).collect();
 
-    let distances: Vec<u32> = bounds.iter().map(|b| (b - number).abs() as u32).collect();
-    // println!("{} {} {} {}", distances[0], distances[1], distances[2], distances[3]);
-    let shortest = (step as u32) - distances.iter().min().unwrap();
-    // println!("Distance = {}", shortest);
-
-    return shortest;
+    return (step as u32) - distances.iter().min().unwrap();
 }
 
 fn part_two() -> u32 {
-    /**
+    /*
      * 369601 363010 349975 330785 312453 295229 279138 266330 130654
      *        6591   6444   6155   5733   5336   5022   2450   128204
      *        13486  147    142    133    122    59     2391   123363
@@ -35,7 +30,6 @@ fn part_two() -> u32 {
      *        17370  35487 37402   39835  42452  45220  47108  48065
      *
      * Yes, I did it manually :p
-     *
      */
     return 369601;
 }
