@@ -46,7 +46,7 @@ fn main() {
             '>' => { in_garbage = false; valid_garbage -= 1; },
             // Skip next char, and also do not count this character as valid garbage
             '!' => { skip = true; valid_garbage -= 1; },
-            // Any othre char, skip because we don't care
+            // Any other char, skip because we don't care
             _ => continue
         }
     }
