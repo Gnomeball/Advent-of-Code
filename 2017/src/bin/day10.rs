@@ -1,57 +1,51 @@
 use std::path::Path;
 use std::fs;
 
-/// This one is not simple
-fn main() {
+pub fn main() {
     let path = Path::new("data/day10.txt");
     let data = fs::read_to_string(path).unwrap();
     let lengths: Vec<usize> = data.split(",").map(
         |n| n.parse::<usize>().unwrap()).collect();
 
-    let mut nums: Vec<usize> = Vec::new();
-    for i in 0..256 { nums.push(i) };
+    let mut rope: Vec<_> = (0..256).collect();
+    step(&lengths, &mut rope, 1);
+    println!("Part one = {}", rope[0] * rope[1]);
 
-    let mut current_pos: isize = 0;
-    let mut skip_size: isize = 0;
-
-    for len in lengths {
-        do_exchange(current_pos, len as isize, &mut nums);
-        current_pos += len as isize + skip_size;
-        skip_size += 1;
-    }
-
-    println!("Part one = {}", nums[0] * nums[1]);
+    let hash: String = knot_hash(data);
+    println!("Part two = {}", hash);
 }
 
-/// Swap two elements in an array
-fn swap(x: usize, y: usize, array: &mut Vec<usize>) -> &mut Vec<usize> {
-    let temp = array[x];
-    array[x] = array[y];
-    array[y] = temp;
-    return array;
+/// Do n steps of the algorithm
+fn step(lengths: &[usize], rope: &mut Vec<usize>, rounds: usize) {
+    let len = rope.len();
+    // Track the skip and the position
+    let mut skip = 0;
+    let mut pos = 0;
+    // For the given number or rounds, do the required swaps
+    for _round in 0..rounds { for length in lengths {
+        for i in 0..(length / 2) {
+            rope.swap((pos + i) % len, (pos + length - i - 1) % len) };
+        // Move the position and increment the skip
+        pos += length + skip;
+        skip += 1;
+    }}
 }
 
-fn do_exchange(pos: isize, len: isize, mut array: &mut Vec<usize>) -> &mut Vec<usize> {
-
-    // get the range to reverse
-    let mut start: isize = pos;
-    let mut end: isize = pos + len - 1;
-
-    // swap that range
-    let range_len: isize = end - start;
-    let n_swaps: isize = (range_len as f32 / 2.0).ceil() as isize;
-
-    for _ in 1..=n_swaps {
-        start = start % array.len() as isize;
-        end = end % array.len() as isize;
-        if end < 0 { end += array.len() as isize };
-        // println!("Swapping {} and {}", start, end);
-        array = swap(start as usize, end as usize, array);
-        start += 1;
-        end -= 1;
-    }
-
-    return array;
+/// Take in a string, return the knot hash
+fn knot_hash(data: String) -> String {
+    // Get the lengths array, this time as bytes
+    let mut lengths: Vec<usize> = data.bytes().map(|b| b as usize).collect();
+    // Extend with the required extension
+    lengths.extend(&[17, 31, 73, 47, 23]);
+    let mut rope: Vec<_> = (0..256).collect();
+    // Do 64 iterations
+    step(&lengths, &mut rope, 64);
+    // Take the array, chunk it
+    let dense: Vec<String> = rope.chunks(16)
+        // Then map these chunks to their dense values
+        .map(|chunk| chunk.iter().fold(0, |acc, &v| acc ^ v as u8))
+        // Then format them back into a string, remembering leading zeros
+        .map(|v| format!("{:02x}", v)).collect();
+    // Join them together, and return
+    return dense.join("") as String;
 }
-
-

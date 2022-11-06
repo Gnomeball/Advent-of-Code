@@ -13,13 +13,11 @@ fn main() {
     let root = "vtzay";
     // Open up your text editor, search for the first node,
     // if it's only found once, it's the root,
-    // else, go to it, and now search for it's parent
-    //
-    // Repeat
+    // else, go to it, and now search for it's parent.  Repeat.
     let node = nodes.get(root).unwrap();
 
     println!("{}", node_string(node, &nodes));
-    // Part two I searched for manually
+    // Part two I searched for manually.
     // (The above function returns valid JSON)
 }
 

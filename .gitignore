@@ -8,3 +8,4 @@
 # Misc
 *.pytest_cache/
 misc/
+*_2.*

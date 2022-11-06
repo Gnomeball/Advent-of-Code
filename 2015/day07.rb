@@ -115,4 +115,4 @@ end
 puts gates.fetch("a")
 
 # This question took me over 6 hours..
-# but my solution to part 1 juat worked for part 2.. so yay
+# but my solution to part 1 just worked for part 2.. so yay
