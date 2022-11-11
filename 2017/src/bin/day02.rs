@@ -1,102 +1,58 @@
-use std::fs::File;
-use std::io::{self, BufRead};
 use std::path::Path;
+use std::fs;
 
 fn main() {
     let path = Path::new("data/day02.txt");
-    let lines = get_lines(path);
+    let data = fs::read_to_string(path).unwrap();
+    let lines: Vec<&str> = data.lines().collect();
+
     let grid = build_grid(lines);
 
     println!("Part one: {}", part_one(&grid));
     println!("Part two: {}", part_two(&grid));
 }
 
-fn get_lines<P>(path: P) -> Vec<String> where P: AsRef<Path> {
-
-    fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-    where P: AsRef<Path> {
-        let file = File::open(filename)?;
-        return Ok(io::BufReader::new(file).lines());
-    }
-
-    let mut lines = Vec::new();
-
-    if let Ok(data) = read_lines(path) {
-        for line in data {
-            if let Ok(ip) = line {
-                lines.push(ip);
-            }
-        }
-    }
-
-    return lines;
-}
-
-fn build_grid(list: Vec<String>) -> Vec<Vec<u32>> {
+/// The very existance of this function annoys me
+fn build_grid(list: Vec<&str>) -> Vec<Vec<usize>> {
     let mut grid = Vec::new();
     for element in list {
         let values: Vec<&str> = element.split(" ").collect();
-        let row = values.into_iter().map(|x| x.parse::<u32>().unwrap()).collect();
+        let row = values.into_iter()
+            .map(|x| x.parse::<usize>().unwrap()).collect();
         grid.push(row);
     }
     return grid;
 }
 
-#[allow(dead_code)]
-fn print_grid(grid: &Vec<Vec<u32>>) {
-    for line in grid {
-        for element in line {
-            print!("{element} ");
-        }   println!();
-    }
-}
-
-fn max_diff_on_line(line: &Vec<u32>) -> u32 {
+/// Given a line, an array of ints, return the difference
+/// between the maximal and minimum values.
+fn max_diff_on_line(line: &Vec<usize>) -> usize {
     let min = line.iter().min().unwrap();
     let max = line.iter().max().unwrap();
     return max - min;
 }
 
-fn part_one(grid: &Vec<Vec<u32>>) -> u32 {
+fn part_one(grid: &Vec<Vec<usize>>) -> usize {
     return grid.into_iter().map(|x| max_diff_on_line(x)).sum();
 }
 
-fn test_divise(left: f32, right: f32) -> u32 {
-    let res = [ left / right, right / left ];
-    for r in res { if r == r.trunc() { return r as u32 } };
+/// Work out if a line has two numbers that divide evenly
+fn divise_line(line: &Vec<usize>) -> usize {
+    // For each value pair,
+    for left in line { for right in line {
+        // first check if they're the same,
+        if left == right {
+            // if so, skip,
+            continue };
+        // else, check if they divide evenly,
+        if left % right == 0 {
+            // and if they do, return that,
+            return left / right };
+    } }
+    // else, return zero.
     return 0;
 }
 
-fn divise_line(line: &Vec<u32>) -> u32 {
-    for i in 0..line.len() {
-        for j in i+1..line.len() {
-            let res = test_divise(line[i] as f32, line[j] as f32);
-            if res != 0 { return res };
-        }
-    }
-    return 0;
-}
-
-fn part_two(grid: &Vec<Vec<u32>>) -> u32 {
+fn part_two(grid: &Vec<Vec<usize>>) -> usize {
     return grid.into_iter().map(|x| divise_line(x)).sum();
-}
-
-#[test]
-fn test_day02_part_one() {
-    let path = Path::new("src/bin/data/day02_p1_test.txt");
-    let lines = get_lines(path);
-    let grid = build_grid(lines);
-
-    let checksum = part_one(&grid);
-    assert_eq!(checksum, 18);
-}
-
-#[test]
-fn test_day02_part_two() {
-    let path = Path::new("src/bin/data/day02_p2_test.txt");
-    let lines = get_lines(path);
-    let grid = build_grid(lines);
-
-    let checksum = part_two(&grid);
-    assert_eq!(checksum, 9);
 }

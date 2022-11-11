@@ -1,37 +1,16 @@
-use std::fs::File;
-use std::io::{self, BufRead};
 use std::path::Path;
+use std::fs;
 
 fn main() {
     let path = Path::new("data/day04.txt");
-    let lines = get_lines(path);
+    let data = fs::read_to_string(path).unwrap();
+    let lines: Vec<&str> = data.lines().collect();
 
     println!("Part one = {}", part_one(&lines));
     println!("Part two = {}", part_two(&lines));
 }
 
-fn get_lines<P>(path: P) -> Vec<String> where P: AsRef<Path> {
-
-    fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-    where P: AsRef<Path> {
-        let file = File::open(filename)?;
-        return Ok(io::BufReader::new(file).lines());
-    }
-
-    let mut lines = Vec::new();
-
-    if let Ok(data) = read_lines(path) {
-        for line in data {
-            if let Ok(ip) = line {
-                lines.push(ip);
-            }
-        }
-    }
-
-    return lines;
-}
-
-fn line_has_dupes(line: &String) -> bool {
+fn line_has_dupes(line: &str) -> bool {
     let mut split: Vec<&str> = line.split_ascii_whitespace().collect();
     for _ in 0..split.len() {
         let item = split.pop().unwrap();
@@ -40,7 +19,7 @@ fn line_has_dupes(line: &String) -> bool {
     return true;
 }
 
-fn part_one(lines: &Vec<String>) -> u32 {
+fn part_one(lines: &Vec<&str>) -> u32 {
     let mut count = 0;
     for line in lines {
         if line_has_dupes(&line) {
@@ -50,7 +29,7 @@ fn part_one(lines: &Vec<String>) -> u32 {
     return count;
 }
 
-fn line_has_dupes_by_anagram(line: &String) -> bool {
+fn line_has_dupes_by_anagram(line: &str) -> bool {
     let mut split: Vec<&str> = line.split_ascii_whitespace().collect();
     let mut split_o: Vec<String> = Vec::new();
 
@@ -70,7 +49,7 @@ fn line_has_dupes_by_anagram(line: &String) -> bool {
     return true;
 }
 
-fn part_two(lines: &Vec<String>) -> u32 {
+fn part_two(lines: &Vec<&str>) -> u32 {
     let mut count = 0;
     for line in lines {
         if line_has_dupes_by_anagram(&line) {

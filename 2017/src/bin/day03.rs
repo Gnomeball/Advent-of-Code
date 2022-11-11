@@ -5,20 +5,20 @@ fn main() {
     println!("Part two = {}", part_two())
 }
 
-fn part_one(number: f32) -> u32 {
+fn part_one(number: f32) -> usize {
     let mut step = number.sqrt().floor();
     while step % 2.0 != 0.0 { step += 1.0 };
     let width = step + 1.0;
 
     let bounds: Vec<f32> = [0.0, 1.0, 2.0, 3.0].iter().map(
         |n| (width * width) - (n * step)).collect();
-    let distances: Vec<u32> = bounds.iter().map(
-        |b| (b - number).abs() as u32).collect();
+    let distances: Vec<usize> = bounds.iter().map(
+        |b| (b - number).abs() as usize).collect();
 
-    return (step as u32) - distances.iter().min().unwrap();
+    return (step as usize) - distances.iter().min().unwrap();
 }
 
-fn part_two() -> u32 {
+fn part_two() -> usize {
     /*
      * 369601 363010 349975 330785 312453 295229 279138 266330 130654
      *        6591   6444   6155   5733   5336   5022   2450   128204
@@ -32,14 +32,4 @@ fn part_two() -> u32 {
      * Yes, I did it manually :p
      */
     return 369601;
-}
-
-#[test]
-fn test_day03_part_one() {
-    let numbers = [ 1.0, 12.0, 23.0, 1024.0 ];
-    let expects = [ 0, 3, 2, 31 ];
-    for n in 0..numbers.len() {
-        let res = part_one(numbers[n]);
-        assert_eq!(res, expects[n]);
-    }
 }

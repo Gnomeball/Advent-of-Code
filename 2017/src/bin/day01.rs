@@ -1,75 +1,38 @@
 use std::path::Path;
 use std::fs;
 
-use std::collections::VecDeque;
-
 fn main() {
     let path = Path::new("data/day01.txt");
     let data = fs::read_to_string(path).unwrap();
-    let nums = build_vector(data);
 
-    println!("part one: {}", part_one(&nums));
-    println!("part two: {}", part_two(&nums));
+    // This still probably isn't the best way ..
+    let nums: Vec<char> = data.chars().collect();
+
+    // Part one asks us to sum all those numbers which match the next one
+    // so we call this function with an offset of 1
+    println!("part one: {}", sum_pairs_with_offset(&nums, 1));
+
+    // Part two however, asks us to sum those numbers which match their antipodal
+    // value, so this time we call it with an offset of length / 2
+    println!("part two: {}", sum_pairs_with_offset(&nums, nums.len() / 2));
 }
 
-fn build_vector(s: String) -> Vec<u32> {
-    return s.bytes().map(|b| b as u32 - 48).collect();
-}
-
-fn sum_pairs(left: &Vec<u32>, right: VecDeque<u32>) -> u32 {
-    let pairs = left.iter().zip(right.iter());
-    let mut count = 0;
-    for (a, b) in pairs {
-        if a == b { count += a } };
+/// Given a list of characters, sum those that match with their pair by offset.
+///
+/// Offset values simply point to a value N ahead of the current one,
+/// for example in the array ['a', 'b', 'c'], an offset of 1 provides
+/// the array ['b', 'c', 'a'], and an offset of 3 would be ['a', 'b', 'c'].
+fn sum_pairs_with_offset(array: &Vec<char>, offset: usize) -> usize {
+    // In order do collect the sum we first need a calue to store it.
+    let mut count: usize = 0;
+    // To make things less verbose, we also take a reference to the length.
+    let length = &array.len();
+    // Now, we loop over the array,
+    for i in 0..*length {
+        // at each value checking if it matches it's pair by offset,
+        if array[i] == array[(i + offset) % *length] {
+            // and if they equal, we simply increment the sum.
+            count += array[i] as usize - 48 } };
+    // And now we return the sum.
     return count;
-}
-
-fn part_one(data: &Vec<u32>) -> u32 {
-    let mut data_step: VecDeque<u32> = VecDeque::from(data.clone());
-    data_step.push_front(data[data.len()-1]);
-
-    return sum_pairs(data, data_step);
-}
-
-fn part_two(data: &Vec<u32>) -> u32 {
-    let mut data_step: VecDeque<u32> = VecDeque::from(data.clone());
-    for i in 0..data.len() / 2 { data_step.push_front(data[data.len()-i-1]) };
-
-    return sum_pairs(data, data_step);
-}
-
-#[test]
-fn test_day01_part_one() {
-
-    let tests = [
-        ("1122", 3),
-        ("1111", 4),
-        ("1234", 0),
-        ("91212129", 9)
-    ];
-
-    for (data, expect) in tests {
-        let result = part_one(&build_vector(String::from(data)));
-        assert_eq!(result, expect);
-    }
-
-}
-
-#[test]
-fn test_day01_part_two() {
-
-    let tests = [
-        ("1212", 6),
-        ("1221", 0),
-        ("123425", 4),
-        ("123123", 12),
-        ("12131415", 4)
-    ];
-
-    for (data, expect) in tests {
-        println!("Testing {} {}", data, expect);
-        let result = part_two(&build_vector(String::from(data)));
-        assert_eq!(result, expect);
-    }
-
 }
