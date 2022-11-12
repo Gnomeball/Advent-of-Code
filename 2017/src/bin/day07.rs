@@ -1,12 +1,12 @@
-use std::fs::File;
-use std::io::{self, BufRead};
 use std::path::Path;
+use std::fs;
 
 use std::collections::HashMap;
 
 fn main() {
     let path = Path::new("data/day07.txt");
-    let lines = get_lines(path);
+    let data = fs::read_to_string(path).unwrap();
+    let lines: Vec<String> = data.lines().map(|l| String::from(l)).collect();
     let nodes = build_nodes(&lines);
 
     // I found this manually:
@@ -19,27 +19,6 @@ fn main() {
     println!("{}", node_string(node, &nodes));
     // Part two I searched for manually.
     // (The above function returns valid JSON)
-}
-
-fn get_lines<P>(path: P) -> Vec<String> where P: AsRef<Path> {
-
-    fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-    where P: AsRef<Path> {
-        let file = File::open(filename)?;
-        return Ok(io::BufReader::new(file).lines());
-    }
-
-    let mut lines = Vec::new();
-
-    if let Ok(data) = read_lines(path) {
-        for line in data {
-            if let Ok(ip) = line {
-                lines.push(ip);
-            }
-        }
-    }
-
-    return lines;
 }
 
 /// A data type to store a node
