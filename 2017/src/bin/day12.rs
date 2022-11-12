@@ -1,13 +1,13 @@
-use std::fs::File;
-use std::io::{self, BufRead};
 use std::path::Path;
+use std::fs;
 
 use std::collections::HashMap;
 use std::collections::HashSet;
 
 fn main() {
     let path = Path::new("data/day12.txt");
-    let lines = get_lines(path);
+    let data = fs::read_to_string(path).unwrap();
+    let lines: Vec<String> = data.lines().map(|l| String::from(l)).collect();
 
     let map = build_map(&lines);
     // println!("{:?}", map);
@@ -38,27 +38,6 @@ fn main() {
 
     println!("Part Two = {}", n_groups);
 
-}
-
-fn get_lines<P>(path: P) -> Vec<String> where P: AsRef<Path> {
-
-    fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-    where P: AsRef<Path> {
-        let file = File::open(filename)?;
-        return Ok(io::BufReader::new(file).lines());
-    }
-
-    let mut lines = Vec::new();
-
-    if let Ok(data) = read_lines(path) {
-        for line in data {
-            if let Ok(ip) = line {
-                lines.push(ip);
-            }
-        }
-    }
-
-    return lines;
 }
 
 /// Convert lines into a HashMap of int -> [int]

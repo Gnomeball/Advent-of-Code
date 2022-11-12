@@ -35,9 +35,9 @@ fn resolve_distance(instructions: Vec<String>) -> (isize, isize) {
     // Track the current position
     let mut x: isize = 0;
     let mut y: isize = 0;
-    // Track the maxemum distance
+    // Track the maximum distance
     let mut max_distance: isize = 0;
-    // Loop over iac instruction
+    // Loop over each instruction
     for ins in instructions {
         match &ins as &str {
             "n"  => { y += 2; },
@@ -56,7 +56,7 @@ fn resolve_distance(instructions: Vec<String>) -> (isize, isize) {
     return (calculate_distance(x.abs(), y.abs()), max_distance);
 }
 
-/// Sigh ... I didn't forsee this (sadface)
+/// Sigh ... I didn't foresee this (sadface)
 fn calculate_distance(x: isize, y: isize) -> isize {
     // We are in the right hand segment, so we return the diagonal length
     if x > y { return x };
