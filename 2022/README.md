@@ -2,7 +2,7 @@
 
 No challenge this year, just get them all done.
 
-1. I don't like either of my solutions to this one
+1. I don't like any of my solutions to this one
 2.
 3.
 4.
