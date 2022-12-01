@@ -33,7 +33,7 @@
 
 with open("data/day01.txt") as file:
     elf_sums = sorted(
-        [ sum(snacks) for snacks in [ [ int(snack) for snack in elf.split("\n") ] for elf in file.read().split("\n\n") ] ],
+        [ sum(snacks) for snacks in [ [ int(snack) for snack in elf.split() ] for elf in file.read().split("\n\n") ] ],
         reverse = True
     )[0:3]
 
@@ -45,6 +45,12 @@ print(f"Part one = {in_place_total[0]}\nPart two = {in_place_total[2]}")
 
 
 
-# Or, just go old school.. this is fugly though
+# Or, here we go - after a nudge :D
 
-# print("Part one =", sorted([ sum(snacks) for snacks in [ [ int(snack) for snack in elf.split("\n") ] for elf in open("data/day01.txt").read().split("\n\n") ] ], reverse = True)[0], "\nPart two =", sum(sorted([ sum(snacks) for snacks in [ [ int(snack) for snack in elf.split("\n") ] for elf in open("data/day01.txt").read().split("\n\n") ] ], reverse = True)[0:3]))
+# print("Part one = {0[0]}\nPart two = {1}".format(
+#     elves := sorted([ sum(snacks) for snacks in [
+#         [ int(snack) for snack in elf.split() ]
+#         for elf in open("data/day01.txt").read().split("\n\n") ]
+#     ], reverse = True),
+#     # This is weirdly a syntax error though
+#     sum(elves[0:3])))
