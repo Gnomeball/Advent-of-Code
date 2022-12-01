@@ -1,5 +1,29 @@
 ### 2020
 
-Lots of these solutions are unintelligible Python one-liners.
+Challenge this year was to one-line things as much as possible
 
-This is because for this year I, and many others at Swansea University, self-imposed the challenge of one lining as many of these problems as possible.  As a result we produced some truly awful code, enjoy!
+1. Easy
+2. Eww, imports
+3. Odear, more imports
+4. SPAM!
+5. Ugly
+6. Uglier
+7. Rip, not a one liner
+8. Confusion central
+9. Easy
+10. Confusion central, the second
+11. Properly Verbose
+12. Idek anymore
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+25.

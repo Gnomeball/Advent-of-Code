@@ -5,17 +5,13 @@ def run_instructions(instructions):
     seen, pointer, accumulator = [], 0, 0
     while pointer not in seen:
         seen.append(pointer)
-        instruction = instructions[pointer] if pointer in range(len(instructions)) else exit("EOF: " + str(accumulator))
+        instruction = instructions[pointer] if pointer in range(len(instructions)) else exit("Part two = " + str(accumulator))
         accumulator += instruction[1] if instruction[0] == "acc" else 0
         inc = instruction[1] if instruction[0] == "jmp" else 1
         pointer += inc
     return accumulator
 
-# Part 1
-
-print(run_instructions(instructions))
-
-# Part 2
+print(f"Part one = {run_instructions(instructions)}")
 
 nopjmps = [i for i in range(len(instructions)) if instructions[i][0] in "nop jmp"]
 

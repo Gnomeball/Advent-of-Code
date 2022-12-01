@@ -38,7 +38,7 @@ with open("data/day01.txt") as file:
     )[0:3]
 
 # Ideally you would probably map sum(index->end), but I can't workout the one liner
-print(f"Part one = {elf_sums[0]}\nPart two = {sum(elf_sums)}")
+# print(f"Part one = {elf_sums[0]}\nPart two = {sum(elf_sums)}")
 
 in_place_total = [ sum(elf_sums[0:n+1]) for n in range(3) ] # Kinda like that
 print(f"Part one = {in_place_total[0]}\nPart two = {in_place_total[2]}")

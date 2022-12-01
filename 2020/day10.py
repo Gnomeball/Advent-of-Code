@@ -5,8 +5,6 @@ with open("data/day10.txt", "r") as file:
 
 thing = sorted(["3"] + [str(z[1] - z[0]) for z in zip([0] + adapters, adapters)])
 
-print(int(len(thing) - "".join(thing).count('1')) * int("".join(thing).count('1')))
-
 # Part 2 -- This confused the heck out of me for hours
 
 def chains(adapters: list):
@@ -23,4 +21,5 @@ def chains(adapters: list):
 
     return(arrangements)
 
-print(chains([0] + adapters + [max(adapters) + 3]))
+print("Part one = {}".format(int(len(thing) - "".join(thing).count('1')) * int("".join(thing).count('1'))))
+print(f"Part two = {chains([0] + adapters + [max(adapters) + 3])}")
