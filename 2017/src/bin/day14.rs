@@ -142,6 +142,6 @@ fn count_groups(grid: &mut Vec<Vec<usize>>) -> usize {
             // and we call the recursive method to clear that group.
             clear_group(x, y, grid);
         }
-    }}
+    } }
     return groups;
 }
