@@ -33,8 +33,10 @@
 
 with open("data/day01.txt") as file:
     elf_sums = sorted(
-        [ sum(snacks) for snacks in [ [ int(snack) for snack in elf.split() ] for elf in file.read().split("\n\n") ] ],
-        reverse = True
+        [ sum(snacks) for snacks in [
+            [ int(snack) for snack in elf.split() ]
+                for elf in file.read().split("\n\n")
+        ] ], reverse = True
     )[0:3]
 
 # Ideally you would probably map sum(index->end), but I can't workout the one liner
