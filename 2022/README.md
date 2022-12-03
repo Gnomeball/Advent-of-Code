@@ -3,8 +3,8 @@
 No challenge this year, just get them all done.
 
 1. I don't like any of my solutions to this one
-2.
-3.
+2. Pre-computation lessgo
+3. Super dumb one liner (PS; don't write code like that please)
 4.
 5.
 6.
