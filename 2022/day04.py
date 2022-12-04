@@ -1,7 +1,7 @@
 from parse import *
 
 with open("data/day04.txt") as file:
-    [ parse("{:d}-{:d},{:d}-{:d}", line) for line in file.read().splitlines() ]
+    ranges = [ parse("{:d}-{:d},{:d}-{:d}", line) for line in file.read().splitlines() ]
 
 # for r in ranges:
 #     if (r[0] >= r[2] and r[1] <= r[3]) or (r[2] >= r[0] and r[3] <= r[1]):
@@ -43,6 +43,36 @@ overlap_only_a_bit = sum([
 
 print(f"Part two = {overlap_only_a_bit}")
 
+
+
 # Tradition demands it..
 
-print(f"Part one = {sum([ 1 if (r[0] >= r[2] and r[1] <= r[3]) or (r[2] >= r[0] and r[3] <= r[1]) else 0 for r in ranges ])}\nPart two = {sum([ 1 if (r[1] >= r[2] and r[0] <= r[3]) or (r[3] >= r[0] and r[1] >= r[2]) else 0 for r in ranges])}")
+# print(f"Part one = {sum([ 1 if (r[0] >= r[2] and r[1] <= r[3]) or (r[2] >= r[0] and r[3] <= r[1]) else 0 for r in ranges ])}\nPart two = {sum([ 1 if (r[1] >= r[2] and r[0] <= r[3]) or (r[3] >= r[0] and r[1] >= r[2]) else 0 for r in ranges])}")
+
+
+
+# Ok now this is silly
+
+# print("Part one = {0[0]}\nPart two = {0[1]}".format([sum(tup) for tup in zip(*[
+#          (1, 1) if ((r[1] >= r[2] and r[0] <= r[3]) or (r[3] >= r[0] and r[1] >= r[2]))
+#                and ((r[0] >= r[2] and r[1] <= r[3]) or (r[2] >= r[0] and r[3] <= r[1]))
+#     else (1, 0) if  (r[0] >= r[2] and r[1] <= r[3]) or (r[2] >= r[0] and r[3] <= r[1])
+#     else (0, 1) if  (r[1] >= r[2] and r[0] <= r[3]) or (r[3] >= r[0] and r[1] >= r[2])
+#     else (0, 0)
+#     for r in [ parse("{:d}-{:d},{:d}-{:d}", line)
+#     for line in open("data/day04.txt").read().splitlines() ]
+# ])]))
+
+
+
+# Now drop the import ..
+
+print("Part one = {0[0]}\nPart two = {0[1]}".format([sum(tup) for tup in zip(*[
+         (1, 1) if ((r[1] >= r[2] and r[0] <= r[3]) or (r[3] >= r[0] and r[1] >= r[2]))
+               and ((r[0] >= r[2] and r[1] <= r[3]) or (r[2] >= r[0] and r[3] <= r[1]))
+    else (1, 0) if  (r[0] >= r[2] and r[1] <= r[3]) or (r[2] >= r[0] and r[3] <= r[1])
+    else (0, 1) if  (r[1] >= r[2] and r[0] <= r[3]) or (r[3] >= r[0] and r[1] >= r[2])
+    else (0, 0)
+    for r in [ list(map(int, line.replace("-", ",").split(",")))
+    for line in open("data/day04.txt").read().splitlines() ]
+])]))
