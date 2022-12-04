@@ -3,9 +3,9 @@
 No challenge this year, just get them all done.
 
 1. I don't like any of my solutions to this one
-2. Pre-computation lessgo
+2. Pre-computation lets go
 3. Super dumb one liner (PS; don't write code like that please)
-4.
+4. Caught me out more times than I would like to admit
 5.
 6.
 7.
