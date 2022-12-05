@@ -3,6 +3,7 @@ from parse import *
 def get_stacks():
 
     def build_stacks(stacks_in):
+        # I don't like this
         stacks_out = [[], [], [], [], [], [], [], [], [], []]
         for stack in stacks_in:
             i, s = 1, 0
@@ -21,8 +22,7 @@ def get_stacks():
         # I don't like how these are hard-coded
         width  = len(data[7])
         stacks = [ stack.ljust(width) for stack in data[:8] ]
-        moves  = [ parse("move {:d} from {:d} to {:d}", move)
-                   for move in data[10:] ]
+        moves  = [ parse("move {:d} from {:d} to {:d}", move) for move in data[10:] ]
 
     stacks = build_stacks(stacks)
     return stacks, moves
@@ -36,8 +36,7 @@ def part_one(stacks, moves):
         for _ in range(move[0]):
             container = stacks[move[1]].pop()
             stacks[move[2]].append(container)
-        # [ stacks[move[2]].append(
-        #   stacks[move[1]].pop()) for _ in range(move[0]) ]
+        # [ stacks[move[2]].append(stacks[move[1]].pop()) for _ in range(move[0]) ]
 
     return read_stacks(stacks)
 
@@ -49,8 +48,7 @@ def part_two(stacks, moves):
             container = stacks[move[1]].pop()
             pile.insert(0, container)
         stacks[move[2]] += pile
-        # stacks[move[2]] += reversed(
-        #   [ stacks[move[1]].pop() for _ in range(move[0]) ])
+        # stacks[move[2]] += reversed([ stacks[move[1]].pop() for _ in range(move[0]) ])
 
     return read_stacks(stacks)
 
