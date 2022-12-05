@@ -6,7 +6,7 @@ No challenge this year, just get them all done.
 2. Pre-computation lets go
 3. Super dumb one liner (PS; don't write code like that please)
 4. Caught me out more times than I would like to admit
-5.
+5. This one feels more complicated than it is
 6.
 7.
 8.
