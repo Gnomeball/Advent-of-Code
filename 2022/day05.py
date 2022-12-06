@@ -23,8 +23,6 @@ def get_stacks():
              for move in data[data.index("")+1:]
            ]
 
-
-
 # def read_stacks(stacks):
 #     return "".join(stack[len(stack)-1] for stack in stacks[1:])
 

@@ -7,7 +7,7 @@ No challenge this year, just get them all done.
 3. Super dumb one liner (PS; don't write code like that please)
 4. Caught me out more times than I would like to admit
 5. This one feels more complicated than it is, mostly due to messy parsing
-6.
+6. Feels too easy
 7.
 8.
 9.
