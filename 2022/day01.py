@@ -53,6 +53,11 @@ print(f"Part one = {in_place_total[0]}\nPart two = {in_place_total[2]}")
 #     elves := sorted([ sum(snacks) for snacks in [
 #         [ int(snack) for snack in elf.split() ]
 #         for elf in open("data/day01.txt").read().split("\n\n") ]
-#     ], reverse = True),
-#     # This is weirdly a syntax error though
-#     sum(elves[0:3])))
+#     ], reverse = True), sum(elves[0:3])))
+    # This is weirdly a syntax error though
+
+
+print("Part one = {0[0]}\nPart two = {1}".format(
+    elves:= list(sorted(list(*[ map(sum, [ list(map(int, elf.split()))
+        for elf in open("data/day01.txt").read().split("\n\n") ] )
+    ]))[-3:]), sum(elves)))
