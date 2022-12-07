@@ -8,6 +8,7 @@ with open("data/day07.txt") as file:
 shell_code = f"cd day07_tree/\n"
 
 for c in history:
+    # I tried match, but it's a syhtax error, and longer ..
     if c == "$ ls": continue
     elif c[0] == 'd': shell_code += f"mkdir {c[4:]}\n"
     elif c[0] == '$': shell_code += f"{c[2:]}\n"
@@ -45,28 +46,23 @@ def get_dir_size(tree):
             dir_size += size
     return dir_size
 
+def get_dirs(op, size, tree):
+    dirs = []
+    for attr in tree:
+        if attr["type"] == "directory":
+            if op(attr["size"], size): dirs.append(attr["size"])
+            dirs += get_dirs(op, size, attr["contents"])
+    return dirs
+
+# Hooray for legibility \o/
+from operator import gt as above
+from operator import lt as below
+
+# This actually does more than appears
 size = get_dir_size(tree)
 
-def get_dirs_under(size, tree):
-    dirs = []
-    for attr in tree:
-        if attr["type"] == "directory":
-            if attr["size"] <= size:
-                dirs.append(attr["size"])
-            dirs += get_dirs_under(size, attr["contents"])
-    return dirs
-
-def get_dirs_over(size, tree):
-    dirs = []
-    for attr in tree:
-        if attr["type"] == "directory":
-            if attr["size"] >= size:
-                dirs.append(attr["size"])
-            dirs += get_dirs_over(size, attr["contents"])
-    return dirs
-
-dirs_1 = get_dirs_under(100000, tree)
-dirs_2 = get_dirs_over(30000000 - (70000000 - size), tree)
+dirs_1 = get_dirs(below, 100000, tree)
+dirs_2 = get_dirs(above, size - 40000000, tree)
 
 print(f"Part one = {sum(dirs_1)}")
 print(f"Part two = {min(dirs_2)}")
