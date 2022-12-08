@@ -9,7 +9,7 @@ No challenge this year, just get them all done.
 5. This one feels more complicated than it is, mostly due to messy parsing
 6. Feels too easy
 7. Absolute Galaxy Brain Solution!
-8.
+8. This caught me out so many times... Reading is hard!
 9.
 10.
 11.
