@@ -25,7 +25,7 @@ for move in moves:
     for _ in range(move[1]):
         # Move the head
         move_head(knots[0], move[0])
-        # Move the othes knots
+        # Move the other knots
         for i in range(1, 10):
             if distance_between(knots[i], knots[i-1]) == 2:
                 move_knot(knots[i], knots[i-1])
