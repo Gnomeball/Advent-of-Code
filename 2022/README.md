@@ -10,8 +10,8 @@ No challenge this year, just get them all done.
 6. Feels too easy
 7. Absolute Galaxy Brain Solution!
 8. This caught me out so many times... Reading is hard!
-9.
-10.
+9. Is this just snake?
+10. Feels more complicated than it probably is
 11.
 12.
 13.
