@@ -12,7 +12,7 @@ No challenge this year, just get them all done.
 8. This caught me out so many times... Reading is hard!
 9. Is this just snake?
 10. Feels more complicated than it probably is
-11.
+11. Wall of text, actualy quite fun
 12.
 13.
 14.
