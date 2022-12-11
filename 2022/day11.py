@@ -1,3 +1,13 @@
+def get_me_the_minkeys():
+    with open("data/day11.txt") as file:
+        minkeys = [ Stuff_Slinging_Simian(s) for s in file.read().split("\n\n") ]
+    return minkeys
+
+def get_me_speed(simians):
+    speed = 1
+    for s in simians: speed *= int(s.test)
+    return speed
+
 def print_simians(simians, rounds = 0):
     print(f"===== Simians after round {rounds} =====")
     for s in simians: print(s)
@@ -35,7 +45,7 @@ class Stuff_Slinging_Simian:
             self.inspections += 1
             new_value = doo_wop(item, self.op)
             if part_one: new_value = int(new_value / 3)
-            boredom = new_value % 9699690 # Speeeeeeed
+            boredom = new_value % speed # Speeeeeeed
             pass_to = self.if_true if boredom % self.test == 0 else self.if_false
             others[ pass_to ].items.append(boredom)
 
@@ -44,20 +54,18 @@ class Stuff_Slinging_Simian:
             return f"Monkey {self.id} has items {self.items}, their operation is \"{self.op}\", their test is to div by {self.test}, and will throw to {self.if_true} if true, else {self.if_false}"
         return f"Monkey {self.id} has done {self.inspections} inspections, and now has items {self.items}"
 
-with open("data/day11.txt") as file:
-    simians = [ Stuff_Slinging_Simian(s) for s in file.read().split("\n\n") ]
-print_simians(simians)
+simians = get_me_the_minkeys()
+speed = get_me_speed(simians)
 
-for r in range(1, 21):
-    do_business(simians, part_one = True)
-    print_simians(simians, r)
+# print_simians(simians)
+
+for r in range(1, 21): do_business(simians, part_one = True)
+    # print_simians(simians, r)
 
 print(f"Part one = {panic_over(simians)}")
 
-with open("data/day11.txt") as file:
-    simians = [ Stuff_Slinging_Simian(s) for s in file.read().split("\n\n") ]
+simians = get_me_the_minkeys()
 
-for r in range(1, 10001):
-    do_business(simians)
+for _ in range(1, 10001): do_business(simians)
 
 print(f"Part two = {panic_over(simians)}")
