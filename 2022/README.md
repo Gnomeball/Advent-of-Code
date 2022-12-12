@@ -13,7 +13,7 @@ No challenge this year, just get them all done.
 9. Is this just snake?
 10. Feels more complicated than it probably is
 11. Wall of text, actually quite fun
-12.
+12. Elves clearly don't suffer fall damage
 13.
 14.
 15.
