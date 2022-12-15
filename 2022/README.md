@@ -15,8 +15,8 @@ No challenge this year, just get them all done.
 11. Wall of text, actually quite fun
 12. Elves clearly don't suffer fall damage
 13. To understand recursion ...
-14. Slow, and I dun lyke it 
-15.
+14. Slow, and I dun lyke it
+15. Took me way too many hours to notice that speed up
 16.
 17.
 18.
