@@ -8,7 +8,7 @@ with open("data/day07.txt") as file:
 shell_code = f"cd day07_tree/\n"
 
 for c in history:
-    # I tried match, but it's a syhtax error, and longer ..
+    # I tried match, but it's a syntax error, and longer ..
     if c == "$ ls": continue
     elif c[0] == 'd': shell_code += f"mkdir {c[4:]}\n"
     elif c[0] == '$': shell_code += f"{c[2:]}\n"

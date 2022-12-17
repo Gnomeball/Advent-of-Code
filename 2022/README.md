@@ -17,7 +17,7 @@ No challenge this year, just get them all done.
 13. To understand recursion ...
 14. Slow, and I dun lyke it
 15. Took me way too many hours to notice that speed up
-16.
+16. This one had me stumped, until the brain kicked into gear
 17.
 18.
 19.
