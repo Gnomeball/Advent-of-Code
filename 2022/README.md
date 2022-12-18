@@ -19,7 +19,7 @@ No challenge this year, just get them all done.
 15. Took me way too many hours to notice that speed up
 16. This one had me stumped, until the brain kicked into gear
 17. I stayed up to 4 am to finish this, I wouldn't sleep until it was done!
-18.
+18. I don't like this because I basically cheated with the import
 19.
 20.
 21.
