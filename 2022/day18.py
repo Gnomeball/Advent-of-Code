@@ -4,7 +4,7 @@ with open("data/day18.txt") as file:
     cubes = [ tuple(map(int, l.split(","))) for l in file.read().splitlines() ]
 
 # But after some thinking, I realised we don't actually care about it being
-# voxels, we only care aboutwhat each point / cube can see
+# voxels, we only care about what each point / cube can see
 
 # Get the neighbours for a cube
 
