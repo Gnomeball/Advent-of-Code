@@ -20,8 +20,8 @@ No challenge this year, just get them all done.
 16. This one had me stumped, until the brain kicked into gear
 17. I stayed up to 4 am to finish this, I wouldn't sleep until it was done!
 18. I don't like this because I basically cheated with the import
-19.
-20.
+19. Definitely harder than last year
+20. Well, that's certainly a step down in difficulty
 21.
 22.
 23.
