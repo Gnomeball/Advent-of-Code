@@ -22,8 +22,8 @@ No challenge this year, just get them all done.
 18. I don't like this because I basically cheated with the import
 19. Definitely harder than last year
 20. Well, that's certainly a step down in difficulty
-21.
-22.
+21. Complex numbers can be useful!
+22. Oh ... ok then 
 23.
 24.
 25.
