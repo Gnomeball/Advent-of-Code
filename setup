@@ -7,3 +7,5 @@ do
     touch $1/data/day$DAY.txt
     touch $1/day$DAY.$2
 done
+
+# This needs to be done properly..
