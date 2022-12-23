@@ -21,7 +21,7 @@ Below is an overview of languages used, with links, to each of these directories
  * [2020](/2020)
    * Python
  * [2021](/2021)
-   * Ruby
+   * Ruby - First time finishing the entire calendar
  * [2022](/2022)
    * Python
    * COBOL - Yes really

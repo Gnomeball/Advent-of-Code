@@ -23,7 +23,7 @@ No challenge this year, just get them all done.
 19. Definitely harder than last year
 20. Well, that's certainly a step down in difficulty
 21. Complex numbers can be useful!
-22. Oh ... ok then 
-23.
+22. Oh ... ok then
+23. Significantly easier than anything from the previous week
 24.
 25.
