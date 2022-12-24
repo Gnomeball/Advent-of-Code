@@ -25,5 +25,5 @@ No challenge this year, just get them all done.
 21. Complex numbers can be useful!
 22. Oh ... ok then
 23. Significantly easier than anything from the previous week
-24.
+24. I may or may not have had too much fun here
 25.
