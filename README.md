@@ -25,3 +25,4 @@ Below is an overview of languages used, with links, to each of these directories
  * [2022](/2022)
    * Python
    * COBOL - Yes really
+   * Raku - Actually quite like this, maybe it'll become a more permanent feature
