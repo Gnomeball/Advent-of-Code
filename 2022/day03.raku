@@ -1,6 +1,6 @@
 my @sacks = slurp("data/day03.txt").lines;
 
-# Icky .. but it works 
+# Icky .. but it works
 my $l = "1abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 sub in_both($left, $right --> Str:D) {
@@ -8,7 +8,7 @@ sub in_both($left, $right --> Str:D) {
 }
 
 sub open_sack($sack --> Seq:D) {
-    return $sack.comb.batch($sack.chars div 2);
+    return $sack.comb.batch($sack.chars div 2)
 }
 
 say "Part one = ", @sacks.map(-> $sack
