@@ -2,18 +2,18 @@
 
 my $debug = False;
 
-sub debug_three ($op, $a, $b, $c, $d) {
+sub debug_three($op, $a, $b, $c, $d) {
     say "$op [ $a ] and [ $b ] for [ $c ] into [ $d ]";
 }
 
-sub initialise ($noun, $verb) {
+sub initialise($noun, $verb) {
     my @prgm = slurp("data/day02.txt").split(",");
     @prgm[1] = $noun;
     @prgm[2] = $verb;
     return @prgm;
 }
 
-sub add ($ptr, @prgm) {
+sub add($ptr, @prgm) {
     my $left   = @prgm[@prgm[$ptr + 1]];
     my $right  = @prgm[@prgm[$ptr + 2]];
     my $result = $left + $right;
@@ -24,7 +24,7 @@ sub add ($ptr, @prgm) {
     return $ptr + 4
 }
 
-sub mult ($ptr, @prgm) {
+sub mult($ptr, @prgm) {
     my $left   = @prgm[@prgm[$ptr + 1]];
     my $right  = @prgm[@prgm[$ptr + 2]];
     my $result = $left * $right;
@@ -35,7 +35,7 @@ sub mult ($ptr, @prgm) {
     return $ptr + 4
 }
 
-sub run (@state) {
+sub run(@state) {
     my $ip = 0;
     my @prgm = initialise(@state[0], @state[1]);
     while @prgm[$ip] != 99 {
