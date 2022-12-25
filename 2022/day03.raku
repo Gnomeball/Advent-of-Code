@@ -1,11 +1,7 @@
-my @sacks = slurp("data/day03.txt").split("\n");
+my @sacks = slurp("data/day03.txt").lines;
 
-sub priority($char --> Int:D) {
-    my $priority = ord($char);
-    if $priority >= 64 && $priority <= 90 {
-        return $priority - 38 } # upper
-        return $priority - 96;  # lower
-}
+# Icky .. but it works 
+my $l = "1abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 sub in_both($left, $right --> Str:D) {
     return ~($left (&) $right)
@@ -16,11 +12,11 @@ sub open_sack($sack --> Seq:D) {
 }
 
 say "Part one = ", @sacks.map(-> $sack
-    { priority(in_both(|open_sack($sack))) } ).sum;
+    { $l.index(in_both(|open_sack($sack))) } ).sum;
 
 sub in_all_three($left, $middle, $right --> Str:D) {
     return ~($left.comb (&) $middle.comb (&) $right.comb)
 }
 
 say "Part two = ", @sacks.batch(3).map(-> $trio
-    { priority(in_all_three(|$trio)) } ).sum;
+    { $l.index(in_all_three(|$trio)) } ).sum;
