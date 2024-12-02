@@ -26,3 +26,7 @@ Below is an overview of languages used, with links, to each of these directories
    * Python
    * COBOL - Yes really
    * Raku - Actually quite like this, maybe it'll become a more permanent feature
+ * [2023](/2023)
+   * Python - Only day one, I didn't really have enough focus
+ * [2024](/2024)
+   * Python - I don't want to, but whatever
