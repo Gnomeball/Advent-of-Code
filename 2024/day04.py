@@ -109,3 +109,8 @@ def cut_and_search(grid):
 count = cut_and_search(wordsearch)
 
 print(f"Part two: {count}")
+
+# with open("data/day04.txt") as file:
+#     wordsearch = file.read().splitlines()
+
+# print(f"Part two: {[ "".join([wordsearch[x-1][y-1], wordsearch[x-1][y+1], wordsearch[x+1][y+1], wordsearch[x+1][y-1]]) in [ "MMSS", "SMMS", "SSMM", "MSSM" ] for y in range (1, len(wordsearch[0]) - 1) for x in range(1, len(wordsearch) - 1) if wordsearch[x][y] == "A" ].count(True)}")
