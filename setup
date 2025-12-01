@@ -2,7 +2,7 @@
 
 mkdir -p $1/data
 
-for DAY in {01..15}
+for DAY in {01..12}
 do
     touch $1/data/day$DAY.txt
     touch $1/day$DAY.$2
