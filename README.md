@@ -30,3 +30,6 @@ Below is an overview of languages used, with links, to each of these directories
    * Python - Only day one, I didn't really have enough focus
  * [2024](/2024)
    * Python - I don't want to, but whatever
+ * [2025](/2025)
+   * Python - I really must put effort into something else if I want to ditch this
+   
