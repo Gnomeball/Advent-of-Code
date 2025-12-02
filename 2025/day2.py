@@ -5,10 +5,10 @@ with open("data/day2.txt") as file:
 import re # a cheap solution, I'm sorry!
 
 def part_one(number):
-    return re.findall(r'^(\w+)\1$', number) != []
+    return re.match(r'^(\w+)\1$', number)
 
 def part_two(number):
-    return re.findall(r'^(\w+)\1+$', number) != []
+    return re.match(r'^(\w+)\1+$', number)
 
 part_one_total = 0
 part_two_total = 0
@@ -24,5 +24,5 @@ print("Part two = ", part_two_total)
 
 # Make them ugly?
 
-# print("Part one = ", sum([ int(s) if re.findall(r'^(\w+)\1$',  str(s)) != [] else 0 for s in all_ids ]) )
-# print("Part two = ", sum([ int(s) if re.findall(r'^(\w+)\1+$', str(s)) != [] else 0 for s in all_ids ]) )
+# print("Part one = ", sum([ int(id) if re.match(r'^(\w+)\1$',  id) else 0 for id in all_ids ]) )
+# print("Part two = ", sum([ int(id) if re.match(r'^(\w+)\1+$', id) else 0 for id in all_ids ]) )
