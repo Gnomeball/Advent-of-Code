@@ -1,4 +1,4 @@
-with open("data/day07.txt") as file:
+with open("data/day05.txt") as file:
     program = list(map(int, file.read().split(",")))
 
 # Debug
