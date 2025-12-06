@@ -37,12 +37,13 @@ with open("data/day6.txt") as file:
     grid_by_lines = transpose([ line.split() for line in grid ])
     # print(grid_by_lines)
 
+    # Part two - again
     grid = transpose(grid)
 
     print("Part one = ", sum(reduce(mult if operators[i] == '*' else add, list(map(int, grid_by_lines[i]))) for i in range(len(operators))))
 
     numbers = [ list(map(int, item.split('-'))) for item in '-'.join( ''.join(n).strip() for n in grid ).split('--') ]
-    print("Part two = ", sum(reduce(mult if operators[i] == '*' else add, list(map(int, numbers[i]))) for i in range(len(operators))))
+    print("Part two = ", sum(reduce(mult if operators[i] == '*' else add, list(map(int,       numbers[i]))) for i in range(len(operators))))
 
 # Part one
 

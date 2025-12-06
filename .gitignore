@@ -8,5 +8,4 @@
 # Misc
 *.pytest_cache/
 misc/
-*_2.*
 *.DS_Store
