@@ -9,8 +9,8 @@ def print_space(space):
     print()
 
 # Swap out the S, so we aren't having to check for another thing
-
-space[0][space[0].index("S")] = "|"
+s_index = space[0].index("S")
+space[0][s_index] = "|"
 
 # Part one
 
@@ -34,10 +34,12 @@ print("Part one =", collisions)
 
 # Part two
 
-y = len(space) -1
-for x in range(len(space[-1])):
-    if space[y][x] == "|":
-        space[y][x] = 1
+space[-1] = [ 1 if s == "|" else s for s in space[-1] ]
+
+# y = len(space) -1
+# for x in range(len(space[-1])):
+#     if space[y][x] == "|":
+#         space[y][x] = 1
 
 for y in range(len(space)-2, -1, -1):
     for x in range(len(space[0])):
@@ -49,4 +51,4 @@ for y in range(len(space)-2, -1, -1):
 
 # print_space(space)
 
-print("Part two =", "".join(map(str, space[0])).replace(".", ""))
+print("Part two =", space[0][s_index])
