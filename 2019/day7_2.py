@@ -238,6 +238,8 @@ DEBUG = False
 
 # Part two
 
+inputs = 
+
 # from itertools import permutations
 
 # phase_values = [ 0, 1, 2, 3, 4 ]
