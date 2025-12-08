@@ -41,6 +41,13 @@ class IntCodeVM:
 
     OUTPUT_DATA = []
 
+    # Game variables
+
+    ball = []
+    paddle = []
+
+    score = []
+
     # Init
 
     def automated_input(self, data, silent_in=False, silent_out=False):
@@ -49,6 +56,10 @@ class IntCodeVM:
             self.INPUT_DATA = data
             self.SILENT_INPUT = silent_in
             self.SILENT_OUTPUT = silent_out
+
+    def add_to_input(self, value):
+        self.INPUT_DATA.append(value)
+        # print("Current Input Data :", self.INPUT_DATA)
 
     def toggle_silent_input(self):
         self.SILENT_INPUT = not self.SILENT_INPUT
@@ -417,10 +428,32 @@ class IntCodeVM:
                     ip, prgm = self.multiply(op, ip, prgm)
                 case 3:
                     if DEBUG_OPS: print(f" [ INPUT ] at [ {ip} ]")
+
+                    # print(f"Ball position : {self.ball[:2]}")
+                    # print(f"Paddle position : {self.paddle[:2]}")
+
+                    potential = self.ball[0] - self.paddle[0]
+                    # print(f"Move could be? : {potential}")
+
+                    if len(self.INPUT_DATA) == 0:
+                        self.add_to_input(potential)
+
                     ip, prgm = self.take_input(op, ip, prgm)
                 case 4:
                     if DEBUG_OPS: print(f" [ OUTPUT ] at [ {ip} ]")
                     ip, prgm = self.give_output(op, ip, prgm)
+
+                    if len(self.OUTPUT_DATA) % 3 == 0:
+                        previous_state = self.OUTPUT_DATA[-3:]
+                        if previous_state[2] == 3: # paddle
+                            self.paddle = previous_state
+                        if previous_state[2] == 4: # ball
+                            self.ball = previous_state
+                        if previous_state[0] == -1: # score
+                            self.score = previous_state
+                            # print(f"Current score : {self.score[2]}")
+                        # print("previous state :", self.OUTPUT_DATA[-3:])
+
                 case 5:
                     if DEBUG_OPS: print(f" [ JMP IF TRUE ] at [ {ip} ]")
                     ip, prgm = self.jump_if_true(op, ip, prgm)
@@ -451,6 +484,7 @@ class IntCodeVM:
 # Tasks
 
 vm = IntCodeVM()
+vm.automated_input([0,0,0])
 vm.silence()
 vm.run(program.copy())
 
@@ -465,7 +499,7 @@ initial_state = states[:1035]
 updates = states[1035:]
 
 # print(initial_state)
-print(updates)
+# print(updates)
 
 max_x = 0
 max_y = 0
@@ -484,7 +518,7 @@ ball = set()
 # ?
 scores = []
 
-for state in states:
+for state in initial_state:
     # print(state)
     x, y, t = state
 
@@ -537,9 +571,43 @@ for b in ball:
 
 # print(play_area)
 
-for line in play_area:
-    print("".join(line))
+# for line in play_area:
+#     print("".join(line))
 
-print("Score tracker = ", scores)
+# print("Score tracker = ", scores)
 
 # print(states)
+
+# initial_score = updates.pop(0)
+final_score = updates.pop()
+
+# print(updates)
+
+# state_changes = [ updates[i:i + 2] for i in range(0, len(updates), 2) ]
+
+# print(state_changes)
+
+# for line in play_area:
+#     print("".join(line))
+
+# for change in state_changes:
+#     try:
+#         prev, new = change
+#         if new[2] == 3:
+#             # paddle
+#             play_area[prev[1]][prev[0]] = " "
+#             play_area[new[1]][new[0]] = "-"
+#         if new[2] == 4:
+#             # ball
+#             play_area[prev[1]][prev[0]] = " "
+#             play_area[new[1]][new[0]] = "*"
+#         if new[0] == -1:
+#             # score
+#             play_area[prev[1]][prev[0]] = " "
+#         print(change)
+#         for line in play_area:
+#             print("".join(line))
+#     except ValueError:
+#         print(change)
+
+print("Final score =", final_score[2])

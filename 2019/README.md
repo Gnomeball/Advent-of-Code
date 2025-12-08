@@ -6,4 +6,8 @@ Didn't actually do these in 2019, most were done as warm up puzzles
 
 * Day 9 was an interesting addition to the IntCocde VM
 
-* Day 13 is my current quarry! This one feels like a proper problem
+* Day 13 was both incredibly challenging and supremely rewarding when I worked out the trick, the image below speaks volumes
+
+![Day 13](./img/day-13.png)
+
+* Day 17 ? Maybe ..
