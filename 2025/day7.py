@@ -34,12 +34,12 @@ print("Part one =", collisions)
 
 # Part two
 
-space[-1] = [ 1 if s == "|" else s for s in space[-1] ]
+# space[-1] = [ 1 if s == '|' else s for s in space[-1] ]
 
 # y = len(space) -1
-# for x in range(len(space[-1])):
-#     if space[y][x] == "|":
-#         space[y][x] = 1
+for x in range(len(space[-1])):
+    if space[-1][x] == "|":
+        space[-1][x] = 1
 
 for y in range(len(space)-2, -1, -1):
     for x in range(len(space[0])):
