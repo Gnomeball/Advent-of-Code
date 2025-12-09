@@ -1,4 +1,4 @@
-with open("data/day1.txt") as file:
+with open("data/day01.txt") as file:
     directions = [ ( line[0], int(line[1:]) ) for line in file.read().splitlines() ]
 
 dir_map = { "L": -1, "R": +1 }

@@ -1,6 +1,6 @@
 # Read in the grid, exploding the lines into character arrays
 
-with open("data/day4.txt") as file:
+with open("data/day04.txt") as file:
     grid = [ [*line] for line in file.read().splitlines() ]
 
 # Function to print a grid

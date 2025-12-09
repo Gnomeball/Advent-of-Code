@@ -1,4 +1,4 @@
-with open("data/day3.txt") as file:
+with open("data/day03.txt") as file:
     banks = file.read().splitlines()
 
 def index_max_single_joltage(bank):

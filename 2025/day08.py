@@ -4,7 +4,7 @@ from itertools import combinations
 # Used for part two
 import networkx
 
-with open("data/day8.txt") as file:
+with open("data/day08.txt") as file:
     junction_boxes = [ tuple(map(int, line.split(","))) for line in file.read().splitlines() ]
 
 

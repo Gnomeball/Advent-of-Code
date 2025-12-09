@@ -1,4 +1,4 @@
-with open("data/day2.txt") as file:
+with open("data/day02.txt") as file:
     ranges = [ tuple(map(int, line.split("-"))) for line in file.read().split(",") ]
     all_ids = [ str(n) for r in ranges for n in tuple(range(r[0], r[1] +1)) ]
 

@@ -1,4 +1,4 @@
-with open("data/day5.txt") as file:
+with open("data/day05.txt") as file:
     [ ranges, ingredients ] = file.read().split("\n\n")
     ranges = [ list(map(int, (r.split("-")))) for r in ranges.splitlines() ]
     ingredients = list(map(int, ingredients.splitlines()))

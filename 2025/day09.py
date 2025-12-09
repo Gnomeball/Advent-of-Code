@@ -9,7 +9,7 @@ class Point:
     def __repr__(self):
         return f"({self.x},{self.y})"
 
-with open("data/day9.txt") as file:
+with open("data/day09.txt") as file:
     red = [ Point(*map(int, line.split(","))) for line in file.read().splitlines() ]
 
 # Function to order points

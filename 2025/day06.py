@@ -26,7 +26,7 @@ def transpose(grid):
 
 
 
-with open("data/day6.txt") as file:
+with open("data/day06.txt") as file:
     # Part two - I can't be fucked working out how to pull these together lol
     grid = file.read().splitlines()
     # print(grid)

@@ -1,4 +1,4 @@
-with open("data/day7.txt") as file:
+with open("data/day07.txt") as file:
     space = [ [ _ for _ in line ] for line in file.read().splitlines() ]
 
 # Function to print the space
