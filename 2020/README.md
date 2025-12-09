@@ -27,3 +27,5 @@ Challenge this year was to one-line things as much as possible
 23.
 24.
 25.
+
+I plan to re-do and maybe complete further into this calendar during 2025, after the first 12 days are completed

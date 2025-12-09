@@ -1,6 +1,6 @@
 ### 2025
 
-First year with only 12 puzzles, by the day 6 half-way point of these I ought to expect day 12~13 level difficulty, where I've historically begun to struggle, and resorted to pulling out real algorithms.
+First year with only 12 puzzles, by the day 6 half-way point of these I ought to expect day 12~13 level difficulty, where I've historically begun to struggle, and resorted to pulling out real algorithms - this has not been the case!
 
 1. A fun starter
 2. Regex goes brr
