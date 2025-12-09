@@ -26,4 +26,9 @@ No challenge this year, just get them all done.
 22. Oh ... ok then
 23. Significantly easier than anything from the previous week
 24. I may or may not have had too much fun here
-25. Sherry before doing balanced quinternary is a bad idea 
+25. Sherry before doing balanced quinternary is a bad idea
+
+-----
+
+Additional solutions in Raku and C++ were done later, if I ever return to these in those languages I will update below
+

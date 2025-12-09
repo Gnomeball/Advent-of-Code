@@ -7,7 +7,7 @@ sub debug_three($op, $a, $b, $c, $d) {
 }
 
 sub initialise($noun, $verb) {
-    my @prgm = slurp("data/day02.txt").split(",");
+    my @prgm = slurp("../data/day02.txt").split(",");
     @prgm[1] = $noun;
     @prgm[2] = $verb;
     return @prgm;

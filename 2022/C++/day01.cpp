@@ -12,7 +12,7 @@ void print_data(std::vector<int> buckets);
 // >> Main program
 
 int main() {
-    std::string filename = "data/day01.txt";
+    std::string filename = "../data/day01.txt";
     std::vector<int> buckets = read_data(filename);
     print_data(buckets);
 }

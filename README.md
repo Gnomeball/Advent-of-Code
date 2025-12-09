@@ -16,7 +16,7 @@ Below is an overview of languages used, with links, to each of these directories
  * [2018](/2018)
    * None yet (will be future warm up / practice)
  * [2019](/2019)
-   * Python
+   * Python - most of my IntCode solutions were written in 2025
    * Raku - Trying out Raku
  * [2020](/2020)
    * Python
@@ -24,7 +24,7 @@ Below is an overview of languages used, with links, to each of these directories
    * Ruby - First time finishing the entire calendar
  * [2022](/2022)
    * Python
-   * COBOL - Yes really
+   * COBOL - Yes really - [Advent of COBOL](https://github.com/Gnomeball/Advent-of-Cobol)
    * Raku - Actually quite like this, maybe it'll become a more permanent feature
  * [2023](/2023)
    * Python - Only day one, I didn't really have enough focus
@@ -32,4 +32,3 @@ Below is an overview of languages used, with links, to each of these directories
    * Python - I don't want to, but whatever
  * [2025](/2025)
    * Python - I really must put effort into something else if I want to ditch this
-   

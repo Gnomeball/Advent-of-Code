@@ -42,7 +42,7 @@ def part_two(strings: [str]) -> int:
             nice += 1
     return nice
 
-with open("data/day05.txt", "r") as file:
+with open("../data/day05.txt", "r") as file:
     strings = file.read().splitlines()
     print(part_one(strings))
     print(part_two(strings))

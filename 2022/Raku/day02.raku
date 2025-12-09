@@ -1,4 +1,4 @@
-my @games = slurp("data/day02.txt").split("\n");
+my @games = slurp("../data/day02.txt").split("\n");
 
 my %p_1 = "A X" => 4, "A Y" => 8, "A Z" => 3,
           "B X" => 1, "B Y" => 5, "B Z" => 9,

@@ -1,4 +1,4 @@
-my @masses = slurp("data/day01.txt").split("\n");
+my @masses = slurp("../data/day01.txt").split("\n");
 
 sub counter_upper($mass --> Int:D) {
     return (+$mass div 3) - 2;

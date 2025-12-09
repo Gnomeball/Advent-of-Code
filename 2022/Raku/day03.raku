@@ -1,4 +1,4 @@
-my @sacks = slurp("data/day03.txt").lines;
+my @sacks = slurp("../data/day03.txt").lines;
 
 # Icky .. but it works
 my $l = "1abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

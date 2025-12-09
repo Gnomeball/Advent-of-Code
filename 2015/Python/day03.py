@@ -27,7 +27,7 @@ def part_two(arrows: str) -> int:
         houses.add((santa_x, santa_y))
     return len(houses)
 
-with open("data/day03.txt", "r") as file:
+with open("../data/day03.txt", "r") as file:
     arrows = file.read()
     print(part_one(arrows))
     print(part_two(arrows))

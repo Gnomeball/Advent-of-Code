@@ -14,7 +14,7 @@
 # Remembered I can do this..
 # And oh wait, batch() exists
 
-my $elfs = slurp("data/day01.txt").split("\n\n")
+my $elfs = slurp("../data/day01.txt").split("\n\n")
     .map(-> $elf {$elf.split("\n")})
     .map(-> $snacks {$snacks.sum})
     .sort.reverse.batch(3).first;
