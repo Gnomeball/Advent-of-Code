@@ -1,11 +1,66 @@
 #!/bin/bash
 
-mkdir -p $1/data
+# mkdir -p $1/data
 
-for DAY in {01..12}
-do
-    touch $1/data/day$DAY.txt
-    touch $1/day$DAY.$2
-done
+# for DAY in {01..12}
+# do
+#     touch $1/data/day$DAY.txt
+#     touch $1/day$DAY.$2
+# done
 
 # This needs to be done properly..
+
+if [[ $1 == "" || $2 == "" ]]; then
+    echo "Usage: ./setup <year> <ext> full?"
+    exit
+fi
+
+mkdir -p $1/data
+
+# Because leading zeroes are desirable, and this is good enough
+
+for DAY in {1..9}
+do
+    touch $1/data/day0$DAY.txt
+    touch $1/day0$DAY.$2
+done
+
+# 2025 and onwards will be only 12 puzzles, these can be hard coded
+
+touch $1/data/day10.txt
+touch $1/data/day11.txt
+touch $1/data/day12.txt
+
+touch $1/day10.$2
+touch $1/day11.$2
+touch $1/day12.$2
+
+# Years before 2025 had 25
+
+if [[ $1 > 2024 ]]; then
+    exit
+fi
+
+# This is an option to provide files for all days beyond that, if empty the program exits
+
+if [[ $3 == "full" ]]; then
+    for DAY in {13..25}
+    do
+        touch $1/data/day$DAY.txt
+        touch $1/day$DAY.$2
+    done
+    exit
+fi
+
+# Else, if given a number in position 3, stop at that day
+
+if [[ $3 =~ ^[0-9]+$ ]]; then
+    for DAY in {13..25}
+    do
+        if [[ $DAY > $3 ]]; then
+            exit
+        fi
+        touch $1/data/day$DAY.txt
+        touch $1/day$DAY.$2
+    done
+fi
