@@ -11,6 +11,6 @@ First year with only 12 puzzles, by the day 6 half-way point of these I ought to
 7. Reads harder than it really is, honestly no more of a challenge than day 1?
 8. Not too difficult once you use a proper type for the graph
 9. I thought Part one had lulled me into a false sense of security, but then part two actually was easy
-10.
-11.
+10. Linear algebra goes brr
+11. Little bit of caching never hurt anyone
 12.
