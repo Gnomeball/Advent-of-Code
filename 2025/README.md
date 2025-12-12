@@ -13,4 +13,8 @@ First year with only 12 puzzles, by the day 6 half-way point of these I ought to
 9. I thought Part one had lulled me into a false sense of security, but then part two actually was easy
 10. Linear algebra goes brr
 11. Little bit of caching never hurt anyone
-12.
+12. Last one being cheap on 'not the 25th' feels wrong somehow .. AoC withdrawal begins now
+
+Overall I don't feel this year was particularly challenging, with maybe only days 8 and 10 presenting a challenge in terms of either a datatype I haven't used in a while, or a library I was unfamiliar with.
+
+The sense of AoC withdrawal over the next few days will feel a bit sour, however.
