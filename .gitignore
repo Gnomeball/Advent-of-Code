@@ -2,6 +2,9 @@
 *.txt
 *.json
 
+# Secrets
+cookie
+
 # Compiled stuff
 */target
 
