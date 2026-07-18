@@ -10,5 +10,7 @@ cookie
 
 # Misc
 *.pytest_cache/
+.idea/
+.vscode/
 misc/
 *.DS_Store
