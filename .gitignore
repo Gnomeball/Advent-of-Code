@@ -1,16 +1,20 @@
 # Problem inputs
-*.txt
-*.json
+**/data/
 
 # Secrets
 cookie
 
-# Compiled stuff
-*/target
-
-# Misc
+# Compiled stuff / compiled project files
+**/target
+.scala-build/
+.bsp/
+.metals/
 *.pytest_cache/
 .idea/
 .vscode/
+
+# Misc
 misc/
+
+# MacOS will be MacOS
 *.DS_Store
